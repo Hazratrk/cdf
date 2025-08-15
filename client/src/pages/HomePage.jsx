@@ -1,20 +1,26 @@
 // client/src/pages/HomePage.jsx
 import React from 'react';
 import HomeSlider from './HomeSlider';
-import AboutSection from '../components/HomePage/AboutSection'; // 1. Yeni komponenti import edin
-// ... digər importlar
+import AboutSection from '../components/HomePage/AboutSection';
+import ActivitiesSection from '../components/HomePage/ActivitiesSection';
+import VideoSection from '../components/HomePage/VideoSection';
+import MissionSection from '../components/HomePage/MissionSection';
+import HseSection from '../components/HomePage/HseSection';
+import ProductsSection from '../components/HomePage/ProductsSection'; 
 
 const HomePage = () => {
   return (
     <div className="bg-white">
       <HomeSlider />
-
-      {/* 2. Köhnə "Who We Are" section-ı silib, bunu əlavə edin */}
       <AboutSection />
+      <ActivitiesSection />
+      <VideoSection />
+      <MissionSection />
+      <HseSection />
+      
 
-      {/* Səhifənin digər section-ları burada davam edir... */}
-      {/* <ActivitiesSection /> */}
-      {/* <MissionSection /> */}
+      <ProductsSection />
+
     </div>
   );
 };
