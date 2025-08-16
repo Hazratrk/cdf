@@ -15,6 +15,7 @@ import HsePage from './pages/HsePage';
 import ContactPage from './pages/ContactPage';
 import NonaqueousPage from './pages/NonaqueousPage';
 import WaterBasePage from './pages/WaterBasePage'; 
+import CompletionWorkoverPage from './pages/CompletionWorkoverPage'; 
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         
         <main className="flex-grow pt-20">
           <Routes>
-    
+         
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/activities" element={<ActivitiesPage />} />
@@ -32,7 +33,7 @@ function App() {
             <Route path="/hse" element={<HsePage />} />
             <Route path="/contact" element={<ContactPage />} />
             
-      
+ 
             <Route 
               path="/activities/nonaqueous-drilling-fluids-obm" 
               element={<NonaqueousPage />} 
@@ -40,6 +41,10 @@ function App() {
             <Route 
               path="/activities/water-base-drilling-fluids"
               element={<WaterBasePage />} 
+            />
+            <Route 
+              path="/activities/completion-and-workover-fluids-services" 
+              element={<CompletionWorkoverPage />} 
             />
           </Routes>
         </main>
