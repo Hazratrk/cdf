@@ -27,7 +27,7 @@ const Header = () => {
         'Water Base Drilling Fluids',
         'Completion and Workover Fluids Services',
         'Drilling Fluids Simulation Software',
-        'Submersible Electric Centrifugal Pumps and Submersible Electric Motors for ESP drive (EVN)',
+        'Submersible Electric Centrifugal Pumps and Submersible Electric Motors for ESP drive EVN',
         'Central Laboratory',
         'Warehouse',
         'Logistic Services',

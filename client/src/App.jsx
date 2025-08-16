@@ -2,10 +2,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
-
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -15,7 +13,9 @@ import HsePage from './pages/HsePage';
 import ContactPage from './pages/ContactPage';
 import NonaqueousPage from './pages/NonaqueousPage';
 import WaterBasePage from './pages/WaterBasePage'; 
-import CompletionWorkoverPage from './pages/CompletionWorkoverPage'; 
+import CompletionWorkoverPage from './pages/CompletionWorkoverPage';
+import DrillingSoftwarePage from './pages/DrillingSoftwarePage';
+import SubmersiblePumpsPage from './pages/SubmersiblePumpsPage';
 
 function App() {
   return (
@@ -25,7 +25,6 @@ function App() {
         
         <main className="flex-grow pt-20">
           <Routes>
-         
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/activities" element={<ActivitiesPage />} />
@@ -33,7 +32,6 @@ function App() {
             <Route path="/hse" element={<HsePage />} />
             <Route path="/contact" element={<ContactPage />} />
             
- 
             <Route 
               path="/activities/nonaqueous-drilling-fluids-obm" 
               element={<NonaqueousPage />} 
@@ -43,8 +41,16 @@ function App() {
               element={<WaterBasePage />} 
             />
             <Route 
-              path="/activities/completion-and-workover-fluids-services" 
+              path="/activities/completion-and-workover-fluids-services"
               element={<CompletionWorkoverPage />} 
+            />
+            <Route 
+              path="/activities/drilling-fluids-simulation-software" 
+              element={<DrillingSoftwarePage />} 
+            />
+            <Route 
+              path="/activities/submersible-electric-centrifugal-pumps-and-submersible-electric-motors-for-esp-drive-evn" 
+              element={<SubmersiblePumpsPage />} 
             />
           </Routes>
         </main>
