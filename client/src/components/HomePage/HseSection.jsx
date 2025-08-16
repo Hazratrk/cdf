@@ -50,21 +50,20 @@ const HseSection = () => {
               variants={fadeIn}
               className="group relative h-[450px] rounded-lg overflow-hidden text-white p-10 flex flex-col justify-end"
             >
-              {/* Arxa Fon Şəkli */}
+          
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110"
                 style={{ backgroundImage: `url(${item.image})` }}
               ></div>
 
-              {/* Qaraltma Effekti */}
+     
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
-              {/* Mətnlər və Link */}
               <div className="relative z-10">
                 <p className="text-sm uppercase tracking-wider mb-2">{item.category}</p>
                 <h3 className="text-3xl lg:text-4xl font-bold leading-tight mb-6">{item.title}</h3>
                 
-                {/* Hover-də çıxan ox */}
+          
                 <div className="flex items-center text-white font-semibold transition-all duration-300 transform -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
                   Read More
                   <FiArrowRight className="ml-3 text-2xl" />

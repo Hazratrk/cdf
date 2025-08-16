@@ -22,14 +22,14 @@ const titleVariants = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }
 };
 
-// src/components/HomePage/ActivitiesSection.jsx
+
 
 const activitiesData = [
   {
     icon: <FaShip size={56} />,
     title: "Nonaqueous Drilling Fluids OBM",
     description: "We suggest a range of Nonaqueous Drilling Fluid systems designed for demanding applications.",
-    link: "/activities/nonaqueous-drilling-fluids-obm" // CORRECTED LINK
+    link: "/activities/nonaqueous-drilling-fluids-obm"
   },
   {
     icon: <FaFlask size={56} />,
@@ -38,13 +38,13 @@ const activitiesData = [
     link: "/activities/water-base-drilling-fluids"
   },
   {
-    icon: <FaTools size={56} />, // Corrected size for consistency
+    icon: <FaTools size={56} />, // Corrected 
     title: "Completion and Workover Fluids Services",
     description: "Completion and Workover fluids design has direct influence on well integrity and well life.",
     link: "/activities/completion-and-workover-fluids-services"
   },
   {
-    icon: <FaLaptopCode size={56} />, // Corrected size for consistency
+    icon: <FaLaptopCode size={56} />, 
     title: "Drilling Fluids Simulation Software",
     description: "Our expert engineers can add value for your projects by providing the following services.",
     link: "/activities/drilling-fluids-simulation-software"

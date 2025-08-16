@@ -40,7 +40,7 @@ const ActivityCard = ({ icon, title, description, link }) => {
         <div className="inline-flex items-center text-gray-400 group-hover:text-blue-600 transition-colors duration-300">
           <FiArrowRight className="text-3xl transform transition-transform duration-300 ease-in-out group-hover:translate-x-2" />
         </div>
-        {/* Bütün kartı kliklənən edən görünməz link */}
+  
         <span className="absolute inset-0" aria-hidden="true"></span>
       </Link>
     </motion.div>

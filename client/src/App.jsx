@@ -16,6 +16,11 @@ import WaterBasePage from './pages/WaterBasePage';
 import CompletionWorkoverPage from './pages/CompletionWorkoverPage';
 import DrillingSoftwarePage from './pages/DrillingSoftwarePage';
 import SubmersiblePumpsPage from './pages/SubmersiblePumpsPage';
+import CentralLaboratoryPage from './pages/CentralLaboratoryPage';
+import WarehousePage from './pages/WarehousePage';
+import LogisticServicesPage from './pages/LogisticServicesPage';
+import EngineeringServicesPage from './pages/EngineeringServicesPage';
+import ProjectManagementPage from './pages/ProjectManagementPage'; 
 
 function App() {
   return (
@@ -32,26 +37,16 @@ function App() {
             <Route path="/hse" element={<HsePage />} />
             <Route path="/contact" element={<ContactPage />} />
             
-            <Route 
-              path="/activities/nonaqueous-drilling-fluids-obm" 
-              element={<NonaqueousPage />} 
-            />
-            <Route 
-              path="/activities/water-base-drilling-fluids"
-              element={<WaterBasePage />} 
-            />
-            <Route 
-              path="/activities/completion-and-workover-fluids-services"
-              element={<CompletionWorkoverPage />} 
-            />
-            <Route 
-              path="/activities/drilling-fluids-simulation-software" 
-              element={<DrillingSoftwarePage />} 
-            />
-            <Route 
-              path="/activities/submersible-electric-centrifugal-pumps-and-submersible-electric-motors-for-esp-drive-evn" 
-              element={<SubmersiblePumpsPage />} 
-            />
+            <Route path="/activities/nonaqueous-drilling-fluids-obm" element={<NonaqueousPage />} />
+            <Route path="/activities/water-base-drilling-fluids" element={<WaterBasePage />} />
+            <Route path="/activities/completion-and-workover-fluids-services" element={<CompletionWorkoverPage />} />
+            <Route path="/activities/drilling-fluids-simulation-software" element={<DrillingSoftwarePage />} />
+            <Route path="/activities/submersible-electric-pumps-and-motors-evn" element={<SubmersiblePumpsPage />} />
+            <Route path="/activities/central-laboratory" element={<CentralLaboratoryPage />} />
+            <Route path="/activities/warehouse" element={<WarehousePage />} />
+            <Route path="/activities/logistic-services" element={<LogisticServicesPage />} />
+            <Route path="/activities/engineering-services" element={<EngineeringServicesPage />} />
+            <Route path="/activities/project-management-services" element={<ProjectManagementPage />} /> 
           </Routes>
         </main>
         

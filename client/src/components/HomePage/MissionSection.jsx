@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import StatCounter from './StatCounter'; // Hərəkətli rəqəmlər üçün komponent
+import StatCounter from './StatCounter'; 
 
 const missionData = {
   title: "OUR MISSION",
@@ -70,7 +70,6 @@ const MissionSection = () => {
     <section className="bg-[#0b0d27] text-white py-28 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         
-        {/* Yuxarı Missiya Mətni */}
         <motion.div 
           className="text-center max-w-4xl mx-auto"
           initial="hidden"
@@ -120,7 +119,7 @@ const MissionSection = () => {
           ))}
         </motion.div>
 
-        {/* Read More Düyməsi */}
+
         <motion.div 
           className="text-center mt-16"
           initial="hidden"
@@ -136,7 +135,7 @@ const MissionSection = () => {
           </Link>
         </motion.div>
 
-        {/* Hərəkətli Rəqəmlər Bölməsi */}
+     
         <motion.div 
           className="mt-28 pt-20 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12"
           variants={staggerContainer}
