@@ -20,7 +20,9 @@ import CentralLaboratoryPage from './pages/CentralLaboratoryPage';
 import WarehousePage from './pages/WarehousePage';
 import LogisticServicesPage from './pages/LogisticServicesPage';
 import EngineeringServicesPage from './pages/EngineeringServicesPage';
-import ProjectManagementPage from './pages/ProjectManagementPage'; 
+import ProjectManagementPage from './pages/ProjectManagementPage';
+import DrillingFluidAdditivesPage from './pages/DrillingFluidAdditivesPage';
+import CompletionWorkoverAdditivesPage from './pages/CompletionWorkoverAdditivesPage'; 
 
 function App() {
   return (
@@ -46,7 +48,10 @@ function App() {
             <Route path="/activities/warehouse" element={<WarehousePage />} />
             <Route path="/activities/logistic-services" element={<LogisticServicesPage />} />
             <Route path="/activities/engineering-services" element={<EngineeringServicesPage />} />
-            <Route path="/activities/project-management-services" element={<ProjectManagementPage />} /> 
+            <Route path="/activities/project-management-services" element={<ProjectManagementPage />} />
+
+            <Route path="/products/drilling-fluid-additives" element={<DrillingFluidAdditivesPage />} />
+            <Route path="/products/completion-and-workover-fluids-additives" element={<CompletionWorkoverAdditivesPage />} /> {/* <--- YENİ ROUTE ƏLAVƏ EDİLDİ */}
           </Routes>
         </main>
         

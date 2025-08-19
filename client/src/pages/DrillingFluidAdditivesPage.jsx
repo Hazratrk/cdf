@@ -1,0 +1,86 @@
+// src/pages/DrillingFluidAdditivesPage.jsx
+import React from 'react';
+import { motion } from 'framer-motion';
+import ResponsiveTable from '../components/common/ResponsiveTable';
+import { FiArrowUp } from 'react-icons/fi';
+
+const heroImageUrl = "https://caspiandf.com/wp-content/uploads/2024/04/ZN_08689-890x664.jpg";
+
+
+const tableData = {
+    headers: ["Trade name", "Unit size", "Description"],
+    data: [
+        
+        [<div key="1"><strong>N-INHIBIT</strong><br />CLAY BOND L</div>, "55 GAL/DRUM", "Providing shale stabilization and cutting encapsulation"],
+        ["", "55 GAL/DRUM", "Highly inhibitive, highly lubricious Nano-shale inhibitor in order to replace KCL in high reactive shales/clays"],
+        ["WELL-STAB", "55 GAL/DRUM", "Mixture of chemicals to improve wellbore stability"],
+        ["SHALE-FORM", "55 GAL/DRUM", "Wellbore stabilizer, lubricity & High filtration control agent"],
+        ["EMO-BLOCK", "55 GAL/DRUM", "Semi-permeable membrane Shale inhibitor"],
+        ["H2S SCAV L", "55 GAL/DRUM", "Liquid hydrogen sulfide scavenger used in WBM"],
+        ["GLYCO-DRILL DP", "55 GAL/DRUM", "Providing good shale control performance, increasing cuttings hardness"],
+        ["WELL-SWEEP", "25 KG/DRUM", "Hi-Vis Pill/Sweeping fluid to provide high efficient hole cleaning and Cuttings carrying"],
+        ["HXD-2X", "25 KG/DRUM", "Thixotropic agents for polymer/clays"],
+        ["RHEO-STAB", "55 GAL/DRUM", "Rheology Stabilizing agent"],
+        ["ROP Enhancer (HC)", "55 GAL/DRUM", "Blended organic surface active agents for enhancing rate of penetration in high clay content formations"],
+        ["ECCI Lube NP", "55 GAL/DRUM", "Providing impotent extreme lubricity properties to drilling fluids"],
+        ["PIPE-Free NP", "55 GAL/DRUM", "Anti-eclipse additive"],
+        ["BIT-WASH", "55 GAL/DRUM", "High Performance Bit-Balling Removal Agent"],
+    ]
+};
+
+const DrillingFluidAdditivesPage = () => {
+  return (
+    <div className="bg-gray-50">
+    
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative h-80 bg-cover bg-center text-white flex items-center justify-center"
+        style={{ backgroundImage: `url(${heroImageUrl})` }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <motion.h1 
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="relative text-5xl font-extrabold"
+        >
+          Drilling Fluid Additives
+        </motion.h1>
+      </motion.div>
+      
+   
+      <div className="container mx-auto max-w-5xl py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-gray-600 text-lg leading-relaxed mb-12"
+        >
+          Drilling fluid additives are specialized chemicals or materials added to drilling fluids to enhance or modify their properties and performance during drilling operations. These additives serve various functions and can improve aspects such as fluid viscosity, lubricity, filtration control, shale inhibition, and thermal stability. They help optimize drilling efficiency, protect the wellbore, and ensure safe and effective drilling in diverse geological formations and conditions.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <ResponsiveTable headers={tableData.headers} data={tableData.data} />
+        </motion.div>
+      </div>
+
+       <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+            className="fixed bottom-6 right-6 bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center hover:bg-blue-700 transition-colors shadow-lg z-40"
+            aria-label="Scroll to top"
+        >
+            <FiArrowUp size={24}/>
+        </button>
+    </div>
+  );
+};
+
+export default DrillingFluidAdditivesPage;
