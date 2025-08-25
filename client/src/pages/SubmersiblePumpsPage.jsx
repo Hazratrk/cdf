@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ContactSidebar from '../components/common/ContactSidebar';
 import { FiArrowUp } from 'react-icons/fi';
-
+import { useTranslation } from 'react-i18next';
 
 const imageUrl = "https://media.licdn.com/dms/image/v2/D5605AQEY4TMRwQ1cfw/videocover-low/B56ZeHkh9VG0B0-/0/1750326242265?e=2147483647&v=beta&t=PdTTJv4Nu8rkHVHPl1jvF6r073VK9HmgPO1t81x_9lE";
 

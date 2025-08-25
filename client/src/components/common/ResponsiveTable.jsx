@@ -1,5 +1,6 @@
 // src/components/common/ResponsiveTable.jsx
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ResponsiveTable = ({ headers, data }) => {
   return (

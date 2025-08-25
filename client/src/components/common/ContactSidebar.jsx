@@ -1,6 +1,7 @@
 // src/components/common/ContactSidebar.jsx
 import React from 'react';
 import { FiMail, FiLinkedin, FiInstagram } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 const linkedinUrl = "https://www.linkedin.com/company/caspian-drilling-fluids/";
 const instagramUrl = "https://www.instagram.com/caspian.drilling.fluids?igsh=MXI1cjllYmVjcWRo";

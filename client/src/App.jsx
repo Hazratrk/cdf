@@ -22,7 +22,9 @@ import LogisticServicesPage from './pages/LogisticServicesPage';
 import EngineeringServicesPage from './pages/EngineeringServicesPage';
 import ProjectManagementPage from './pages/ProjectManagementPage';
 import DrillingFluidAdditivesPage from './pages/DrillingFluidAdditivesPage';
-import CompletionWorkoverAdditivesPage from './pages/CompletionWorkoverAdditivesPage'; 
+import CompletionWorkoverAdditivesPage from './pages/CompletionWorkoverAdditivesPage';
+import EnvironmentalMonitoringPage from './pages/EnvironmentalMonitoringPage'; // <--- YENİ SƏHİFƏ İMPORT EDİLDİ
+import EmployeesSecurityPage from './pages/Employees’SecurityPage';
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
             <Route path="/hse" element={<HsePage />} />
             <Route path="/contact" element={<ContactPage />} />
             
+            {/* Activities Alt Səhifələri */}
             <Route path="/activities/nonaqueous-drilling-fluids-obm" element={<NonaqueousPage />} />
             <Route path="/activities/water-base-drilling-fluids" element={<WaterBasePage />} />
             <Route path="/activities/completion-and-workover-fluids-services" element={<CompletionWorkoverPage />} />
@@ -50,8 +53,13 @@ function App() {
             <Route path="/activities/engineering-services" element={<EngineeringServicesPage />} />
             <Route path="/activities/project-management-services" element={<ProjectManagementPage />} />
 
+            {/* Products Alt Səhifələri */}
             <Route path="/products/drilling-fluid-additives" element={<DrillingFluidAdditivesPage />} />
-            <Route path="/products/completion-and-workover-fluids-additives" element={<CompletionWorkoverAdditivesPage />} /> {/* <--- YENİ ROUTE ƏLAVƏ EDİLDİ */}
+            <Route path="/products/completion-and-workover-fluids-additives" element={<CompletionWorkoverAdditivesPage />} />
+
+            {/* HSE Alt Səhifələri */}
+            <Route path="/hse/environmental-monitoring" element={<EnvironmentalMonitoringPage />} /> {/* <--- YENİ ROUTE ƏLAVƏ EDİLDİ */}
+            <Route path="/hse/employees-security/" element={<EmployeesSecurityPage />} />
           </Routes>
         </main>
         

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import ContactSidebar from '../components/common/ContactSidebar';
 import ResponsiveTable from '../components/common/ResponsiveTable';
 import { FiArrowUp } from 'react-icons/fi';
-
+import { useTranslation } from 'react-i18next';
 const imageUrl = "https://www.c1water.com/wp-content/uploads/2022/12/Rectangle-73.png";
 
 

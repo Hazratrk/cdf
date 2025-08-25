@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { activities } from '../data/activitiesData'; 
 import ServiceCard from '../components/common/ServiceCard';
 import { FiSearch } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 const staggerContainer = {
   hidden: { opacity: 0 },

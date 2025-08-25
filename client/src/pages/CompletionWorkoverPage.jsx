@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ContactSidebar from '../components/common/ContactSidebar';
 import { FiArrowUp } from 'react-icons/fi';
-
+import { useTranslation } from 'react-i18next';
 
 const imageUrl = "https://az.globaldrillings.com/wp-content/uploads/2020/06/Drilling-Fluid-Services-1024x830.jpg";
 

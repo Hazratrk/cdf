@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import StatCounter from './StatCounter'; 
+import { useTranslation } from 'react-i18next';
 
 const missionData = {
   title: "OUR MISSION",

@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ResponsiveTable from '../components/common/ResponsiveTable';
 import { FiArrowUp } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 const heroImageUrl = "https://caspiandf.com/wp-content/uploads/2024/04/ZN_08685.jpg";
 

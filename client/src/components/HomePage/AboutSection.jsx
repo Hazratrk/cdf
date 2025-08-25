@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom'; 
-
+import { useTranslation } from 'react-i18next';
 
 const image1_url = 'https://media.licdn.com/dms/image/v2/D4E22AQE9Mx3Ggu1FdQ/feedshare-shrink_800/feedshare-shrink_800/0/1709603406776?e=2147483647&v=beta&t=4vXVjMZmLP5iVV77fRvUttBxiC166kcEVLjbCO_TI4Y';
 const image2_url = 'https://media.licdn.com/dms/image/v2/D4E22AQFbBrZLnSindg/feedshare-shrink_800/feedshare-shrink_800/0/1727109693908?e=2147483647&v=beta&t=7a_txVxQLQxleJ62GthNZImRdavKBnRZPMw_ImAS2vE';

@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ContactSidebar from '../components/common/ContactSidebar';
 import { FiArrowUp } from 'react-icons/fi';
-
+import { useTranslation } from 'react-i18next';
 
 const imageUrl = "https://caspiandf.com/wp-content/uploads/2024/04/ZN_08587.jpg";
 

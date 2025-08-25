@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ContactSidebar from '../components/common/ContactSidebar';
 import { FiArrowUp } from 'react-icons/fi';
-
+import { useTranslation } from 'react-i18next';
 
 const imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFecSmzKovlNSSku4RAi0H6-V1xoe_MCgoem5qDonsdIStNRoj0NY6-rddaJ5Pp_m1LKQ&usqp=CAU";
 

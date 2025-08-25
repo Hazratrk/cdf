@@ -1,37 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import cdf1 from '../assets/img/cdf1.jpg';
+import cdf2 from '../assets/img/cdf2.jpg';
+import cdf3 from '../assets/img/cdf3.jpeg';
 
 const HomeSlider = () => {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const slides = [
     {
-      title: "Project Management & Engineering Services",
-      subtitle: "About Us",
-      heading: "FLUID DESIGN SOLUTIONS",
-      description: "Designing drilling and completion fluids, engineering services and products",
+      title: t('slider.title_1'),
+      subtitle: t('slider.subtitle_1'),
+      heading: t('slider.heading_1'),
+      description: t('slider.description_1'),
       page: "01 / 03",
-      image: "https://caspiandf.com/wp-content/uploads/2024/04/ZN_08685-840x473.jpg"
+      image: cdf1
     },
     {
-      title: "Project Management & Engineering Services",
-      subtitle: "About Us",
-      heading: "FLUID DESIGN SOLUTIONS",
-      description: "Designing drilling and completion fluids, engineering services and products",
+      title: t('slider.title_2'),
+      subtitle: t('slider.subtitle_2'),
+      heading: t('slider.heading_2'),
+      description: t('slider.description_2'),
       page: "02 / 03",
-      image: "https://caspiandf.com/wp-content/uploads/elementor/thumbs/ZN_08671-scaled-qmehbwz6va0eykd2953iylycsyig0y6h4pw2lltpzk.jpg"
+      image: cdf2
     },
     {
-      title: "Project Management & Engineering Services",
-      subtitle: "About Us",
-      heading: "FLUID DESIGN SOLUTIONS",
-      description: "Designing drilling and completion fluids, engineering services and products",
+      title: t('slider.title_3'),
+      subtitle: t('slider.subtitle_3'),
+      heading: t('slider.heading_3'),
+      description: t('slider.description_3'),
       page: "03 / 03",
-      image: "https://caspiandf.com/wp-content/uploads/2024/04/ZN_08689-840x473.jpg"
+      image: cdf3
     }
   ];
-
 
   useEffect(() => {
     let interval;
@@ -71,11 +75,7 @@ const HomeSlider = () => {
           opacity: 0.7
         }}
       ></div>
-
- 
       <div className="absolute inset-0 bg-black/30"></div>
-
-   
       <div className="relative z-10 flex flex-col justify-center h-full text-white px-8 md:px-16 lg:px-32">
         <div className="max-w-4xl">
           <h2 className="text-xl md:text-2xl font-light mb-2">{slides[currentSlide].title}</h2>
@@ -101,8 +101,6 @@ const HomeSlider = () => {
           </div>
         </div>
       </div>
-
-  
       <button 
         onClick={prevSlide}
         className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-20 text-white hover:text-gray-300 transition-colors"
@@ -121,8 +119,6 @@ const HomeSlider = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
-
-    
       {slides.map((_, index) => (
         <Link 
           key={index}

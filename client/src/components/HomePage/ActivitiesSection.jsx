@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ActivityCard from './ActivityCard';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
-
+import { useTranslation } from 'react-i18next';
 import { FaShip, FaFlask, FaTools, FaLaptopCode } from 'react-icons/fa';
 
 const sectionVariants = {

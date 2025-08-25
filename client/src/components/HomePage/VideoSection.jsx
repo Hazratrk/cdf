@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlay } from 'react-icons/fa';
 import { FiX } from 'react-icons/fi';
-
+import { useTranslation } from 'react-i18next';
 
 const videoBgImageUrl = 'https://www.newpark.com/assets/images/content/Wyoming_case_study_x2_1.jpg';
 

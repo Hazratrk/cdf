@@ -1,5 +1,6 @@
 // src/components/common/DataTable.jsx
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const DataTable = ({ headers, data }) => {
   return (

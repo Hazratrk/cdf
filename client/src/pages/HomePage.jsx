@@ -7,6 +7,7 @@ import VideoSection from '../components/HomePage/VideoSection';
 import MissionSection from '../components/HomePage/MissionSection';
 import HseSection from '../components/HomePage/HseSection';
 import ProductsSection from '../components/HomePage/ProductsSection'; 
+import { useTranslation } from 'react-i18next';
 
 const HomePage = () => {
   return (

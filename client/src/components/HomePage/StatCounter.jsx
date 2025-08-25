@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const StatCounter = ({ to, suffix, label }) => {
   const nodeRef = useRef();

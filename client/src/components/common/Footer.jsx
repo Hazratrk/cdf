@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
     return (
@@ -89,7 +90,7 @@ const Footer = () => {
                                 <span className="absolute left-0 bottom-0 h-px w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                             </a>
                             <a 
-                                href="#" 
+                                href="https://www.instagram.com/caspian.drilling.fluids?igsh=MXI1cjllYmVjcWRo" 
                                 className="text-sm hover:text-white transition-colors duration-300 relative group inline-flex items-center gap-2"
                             >
                                 <FaInstagram /> Instagram

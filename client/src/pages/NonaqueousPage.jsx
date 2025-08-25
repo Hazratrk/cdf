@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiMail, FiLinkedin, FiInstagram, FiArrowUp } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 const imageUrl = "https://www.slb.com/-/media/images/mi/fluid-loss-control/rhemax-p-card.jpg";
 const linkedinUrl = "https://www.linkedin.com/company/caspian-drilling-fluids/";
