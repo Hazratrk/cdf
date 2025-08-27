@@ -1,47 +1,151 @@
 // src/pages/WaterBasePage.jsx
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import ContactSidebar from '../components/common/ContactSidebar';
 import ResponsiveTable from '../components/common/ResponsiveTable';
 import { FiArrowUp } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
-const imageUrl = "https://www.c1water.com/wp-content/uploads/2022/12/Rectangle-73.png";
 
+import obm2 from '../assets/img/obm2.jpg';
 
-const tableData = [
-  {
-    title: "Inhibited HPWBM for Moderate – Active Shales/Clay",
-    headers: ["Trade Name", "Fluid type", "Systems description", "Application"],
-    data: [
-      ["CLAY-BOND", "HPWBM", "HPWBM containing high molecular weight polymers to prevent clay dispersion in the mud and changing rheological properties", "To drill high reactive shale/clay/reduce bit balling To provide good hole cleaning and cutting integrity Increase wellbore stability Improve ROP with stable hole condition in high reactive clays"],
-      ["GLYCO-DRILL", "HPWBM", "HPWBM to overcome shale problems by using different types of glycols and inhibitor salts compatible with low to high formation temperatures", "Reduced dilution rate Minimizing bit balling Increasing ROP Reducing torque and drag"],
-      ["SHALE-DRILL", "HPWBM", "HPWBM formulated by using asphalt additives to improve shale stability, inhibit dispersion of drilled solids, and help to control high temperature water loss in reactive shales", "Wellbore stability/help to reduce HPHT fluid loss Reduced dilution rate Increasing ROP Reducing torque and drag"],
-    ]
+const linkedinUrl = "https://www.linkedin.com/company/caspian-drilling-fluids/";
+const instagramUrl = "https://www.instagram.com/caspian.drilling.fluids?igsh=MXI1cjllYmVjcWRo";
+
+// NonaqueousPage-dən köçürülən animasiya obyektləri
+const titleContainer = {
+  hidden: { opacity: 0 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: i * 0.04 },
+  }),
+};
+
+const titleChar = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
+    },
   },
-  {
-    title: "Heavy Weight HPWBM for High Pressure Zones",
-    headers: ["Trade Name", "Fluid type", "Systems description", "Application"],
-    data: [
-      ["HEAVY-DRILL", "HPWBM", "Salt saturated water based mud to drill high pressure zones up to 2.4 S.G by using BARA-WATE and HEMA WATE as weighting agents, appropriate viscosifers, fluid loss control agents and temperature stabilizers", "To drill deep high pressure salt water zone up to 2.4 High resistance to calcium and magnesium Good rheological properties and stable gel strength in high temperature"],
-      ["ULTRA-WEIGHT", "HPWBM", "Salt saturated water based mud to drill high pressure zones up to 2.65 S.G by using BARA-WATE and HEMA-WATE as weighting agents, special rheology control agents to keep the rheological properties and fluid loss constant during drilling high pressure zones", "To drill deep abnormal high pressure salt water zone up to 2.65 S.G High resistance to calcium and magnesium Good rheological properties and stable gel strength in high temperature"],
-    ]
+  hidden: {
+    opacity: 0,
+    y: 20,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
+    },
   },
-  {
-    title: "High ROP HPWBM for Deviated, Horizontal & Extended Reach Wells",
-    headers: ["Trade Name", "Fluid type", "Systems description", "Application"],
-    data: [
-      ["LUB-DRILL", "HPWBM", "HPWBM formulated for drilling high deviated and horizontal section by using special high performance lubricants to reduce torque and drag and improving ROP during sliding", "To drill horizontal and high deviated wells. Reduce torque and drag/friction coefficient factor. Improving ROP Reducing differential sticking"],
-    ]
-  }
-];
+};
 
 const WaterBasePage = () => {
+  const { t } = useTranslation();
+  
+
+  const pageTitle = t('activities.water_base_drilling_fluids_title'); 
+  const animatedTitle = pageTitle.split(" ").map((word, wordIndex) => (
+    <span key={wordIndex} className="inline-block whitespace-nowrap mr-4">
+      {word.split("").map((char, charIndex) => (
+        <motion.span key={charIndex} className="inline-block" variants={titleChar}>
+          {char}
+        </motion.span>
+      ))}
+    </span>
+  ));
+
+  const tableData = [
+    {
+      title: t('water_base_page.table_1_title'),
+      headers: [
+        t('water_base_page.table_headers_trade_name'),
+        t('water_base_page.table_headers_fluid_type'),
+        t('water_base_page.table_headers_systems_description'),
+        t('water_base_page.table_headers_application')
+      ],
+      data: [
+        [
+          t('water_base_page.table_1_data_1_trade_name'), 
+          "HPWBM", 
+          t('water_base_page.table_1_data_1_description'), 
+          t('water_base_page.table_1_data_1_application')
+        ],
+        [
+          t('water_base_page.table_1_data_2_trade_name'), 
+          "HPWBM", 
+          t('water_base_page.table_1_data_2_description'), 
+          t('water_base_page.table_1_data_2_application')
+        ],
+        [
+          t('water_base_page.table_1_data_3_trade_name'), 
+          "HPWBM", 
+          t('water_base_page.table_1_data_3_description'), 
+          t('water_base_page.table_1_data_3_application')
+        ],
+      ]
+    },
+    {
+      title: t('water_base_page.table_2_title'),
+      headers: [
+        t('water_base_page.table_headers_trade_name'),
+        t('water_base_page.table_headers_fluid_type'),
+        t('water_base_page.table_headers_systems_description'),
+        t('water_base_page.table_headers_application')
+      ],
+      data: [
+        [
+          t('water_base_page.table_2_data_1_trade_name'), 
+          "HPWBM", 
+          t('water_base_page.table_2_data_1_description'), 
+          t('water_base_page.table_2_data_1_application')
+        ],
+        [
+          t('water_base_page.table_2_data_2_trade_name'), 
+          "HPWBM", 
+          t('water_base_page.table_2_data_2_description'), 
+          t('water_base_page.table_2_data_2_application')
+        ],
+      ]
+    },
+    {
+      title: t('water_base_page.table_3_title'),
+      headers: [
+        t('water_base_page.table_headers_trade_name'),
+        t('water_base_page.table_headers_fluid_type'),
+        t('water_base_page.table_headers_systems_description'),
+        t('water_base_page.table_headers_application')
+      ],
+      data: [
+        [
+          t('water_base_page.table_3_data_1_trade_name'), 
+          "HPWBM", 
+          t('water_base_page.table_3_data_1_description'), 
+          t('water_base_page.table_3_data_1_application')
+        ],
+      ]
+    }
+  ];
+
   return (
     <div className="bg-gray-50">
+      {/* NonaqueousPage-dən köçürülən animasiyalı başlıq bloğu */}
+      <motion.div 
+        className="bg-[#0b0d27] text-white py-20 lg:py-28 flex items-center justify-center overflow-hidden"
+        initial="hidden"
+        animate="visible"
+        variants={titleContainer}
+      >
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center">
+          {animatedTitle}
+        </h1>
+      </motion.div>
+
       <div className="container mx-auto max-w-7xl py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           
-        
           <div className="lg:col-span-2 space-y-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -51,13 +155,13 @@ const WaterBasePage = () => {
               className="bg-white rounded-xl shadow-md overflow-hidden"
             >
               <img 
-                src={imageUrl} 
-                alt="Water-based drilling fluids" 
+                src={obm2} 
+                alt={t('activities.water_base')} 
                 className="w-full h-64 object-cover" 
               />
               <div className="p-6">
                 <p className="text-gray-700 leading-relaxed">
-                  Water-based drilling fluids are formulated using water as the continuous phase. These fluids are environmentally friendly, cost-effective, and versatile, suitable for a wide range of drilling applications. They provide good hole stability, excellent fluid loss control, and can be easily adjusted for specific drilling conditions.
+                  {t('water_base_page.description')}
                 </p>
               </div>
             </motion.div>
@@ -82,7 +186,6 @@ const WaterBasePage = () => {
             </motion.div>
           </div>
 
-        
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -94,7 +197,6 @@ const WaterBasePage = () => {
         </div>
       </div>
       
-
       <button 
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
         className="fixed bottom-6 right-6 bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center hover:bg-blue-700 transition-colors shadow-lg z-40"

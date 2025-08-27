@@ -6,8 +6,6 @@ import { FiSearch, FiGrid, FiX, FiChevronDown } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
-
-
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -30,7 +28,7 @@ const Header = () => {
     i18n.changeLanguage(lng);
   };
   
- 
+
   const navLinksData = [
     { name: t('header.home'), path: '/' },
     { 
@@ -66,7 +64,7 @@ const Header = () => {
       ]
     },
     { name: t('header.about_us'), path: '/about' }
-];
+  ];
 
   return (
     <header className={`bg-[#0a0d25] text-gray-200 fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'py-4 shadow-lg' : 'py-6'}`}>

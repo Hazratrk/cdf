@@ -1,4 +1,5 @@
 // src/pages/ActivitiesPage.jsx
+
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { activities } from '../data/activitiesData'; 
@@ -16,51 +17,95 @@ const staggerContainer = {
   }
 };
 
+const titleContainer = {
+  hidden: { opacity: 0 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: i * 0.04 },
+  }),
+};
+
+const titleChar = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: 20,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
+    },
+  },
+};
+
 const ActivitiesPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
-
+  const { t } = useTranslation();
 
   const filteredActivities = useMemo(() => 
     activities.filter(activity =>
-      activity.title.toLowerCase().includes(searchQuery.toLowerCase())
+      t(`activities.${activity.link.split('/').pop().replace(/-/g, '_')}`).toLowerCase().includes(searchQuery.toLowerCase())
     ), 
-    [searchQuery]
+    [searchQuery, t]
   );
+  
+  // ServiceCard komponentində istifadə etmək üçün hər bir fəaliyyətə tərcümə edilmiş başlığı əlavə edirik
+  const translatedActivities = filteredActivities.map(activity => {
+    const translationKey = `activities.${activity.link.split('/').pop().replace(/-/g, '_')}`;
+    return {
+      ...activity,
+      title: t(translationKey),
+      translatedTitle: t(translationKey) 
+    };
+  });
+
+  const pageTitle = t('activities_page.title');
+  const animatedTitle = pageTitle.split("").map((char, index) => (
+    <motion.span key={index} variants={titleChar} className="inline-block">
+      {char === " " ? "\u00A0" : char}
+    </motion.span>
+  ));
 
   return (
-    <div className="bg-white">
+    <div className="bg-gray-50">
   
-      <div className="bg-gray-50 pt-24 pb-16 text-center">
-        <motion.h1 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-5xl font-extrabold text-gray-800"
-        >
-          Our Activities
-        </motion.h1>
+      <motion.div 
+        className="bg-[#0b0d27] text-white py-20 lg:py-28 flex items-center justify-center overflow-hidden"
+        initial="hidden"
+        animate="visible"
+        variants={titleContainer}
+      >
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center">
+          {animatedTitle}
+        </h1>
+      </motion.div>
+      <div className="bg-gray-50 pb-20 px-4 sm:px-6 lg:px-8">
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-4 text-lg text-gray-500"
+          className="mt-4 text-center text-lg text-gray-500"
         >
-          Comprehensive solutions for the oil and gas industry
+          {t('activities_page.subtitle')}
         </motion.p>
-      </div>
-
-    
-      <div className="bg-gray-50 pb-20 px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="container mx-auto max-w-2xl"
+          className="container mx-auto max-w-2xl mt-8"
         >
           <div className="relative">
             <input
               type="text"
-              placeholder="Search for an activity..."
+              placeholder={t('activities_page.search_placeholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-4 text-lg text-gray-700 bg-white border-2 border-transparent rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
@@ -81,11 +126,11 @@ const ActivitiesPage = () => {
             animate="visible"
             exit="hidden"
           >
-            {filteredActivities.length > 0 ? (
-              filteredActivities.map((activity, index) => (
+            {translatedActivities.length > 0 ? (
+              translatedActivities.map((activity, index) => (
                 <ServiceCard 
-                  key={activity.link} // Daha stabil key
-                  title={activity.title}
+                  key={activity.link} 
+                  title={activity.translatedTitle}
                   image={activity.image}
                   link={activity.link}
                 />
@@ -96,7 +141,7 @@ const ActivitiesPage = () => {
                 animate={{ opacity: 1 }}
                 className="col-span-full text-center py-16"
               >
-                <p className="text-xl text-gray-500">No activities found matching your search.</p>
+                <p className="text-xl text-gray-500">{t('activities_page.no_results')}</p>
               </motion.div>
             )}
           </motion.div>
