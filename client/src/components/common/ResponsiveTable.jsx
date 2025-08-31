@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const ResponsiveTable = ({ headers, data }) => {
   return (
     <div className="w-full overflow-hidden rounded-lg">
-      {/* Desktop Table */}
+     
       <div className="hidden md:block">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-100">
@@ -40,7 +40,7 @@ const ResponsiveTable = ({ headers, data }) => {
         </table>
       </div>
 
-      {/* Mobile Cards */}
+    
       <div className="md:hidden space-y-4">
         {data.map((row, rowIndex) => (
           <div 

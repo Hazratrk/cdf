@@ -67,7 +67,7 @@ const HomeSlider = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-[#0b0d27]">
-      {/* Background Image */}
+
       <div 
         className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
         style={{

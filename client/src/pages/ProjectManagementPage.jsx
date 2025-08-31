@@ -1,118 +1,67 @@
-// src/pages/ProjectManagementPage.jsx
-
 import React from 'react';
-import { motion } from 'framer-motion';
 import ContactSidebar from '../components/common/ContactSidebar';
 import { FiArrowUp } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
-import projectManagementImage from '../assets/img/obm10.jpg'; // obm10.jpg şəkli import olunur
-
-const titleContainer = {
-  hidden: { opacity: 0 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    transition: { staggerChildren: 0.08, delayChildren: i * 0.04 },
-  }),
-};
-
-const titleChar = {
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      damping: 12,
-      stiffness: 100,
-    },
-  },
-  hidden: {
-    opacity: 0,
-    y: 20,
-    transition: {
-      type: "spring",
-      damping: 12,
-      stiffness: 100,
-    },
-  },
-};
+import projectManagementImage from '../assets/img/obm10.jpg';
 
 const ProjectManagementPage = () => {
   const { t } = useTranslation();
 
-  const pageTitle = t('activities.project_management_title');
-  const animatedTitle = pageTitle.split("").map((char, index) => (
-    <motion.span key={index} variants={titleChar} className="inline-block">
-      {char === " " ? "\u00A0" : char}
-    </motion.span>
-  ));
-
   return (
-    <div className="bg-gray-50">
-      <motion.div
-        className="bg-[#0b0d27] text-white py-20 lg:py-28 flex items-center justify-center overflow-hidden"
-        initial="hidden"
-        animate="visible"
-        variants={titleContainer}
-      >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center">
-          {animatedTitle}
+    <div className="bg-white min-h-screen">
+ 
+      <div className="bg-[#0b0d27] text-white py-16 lg:py-20 flex items-center justify-center">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-center tracking-tight">
+          {t('activities.project_management_title')}
         </h1>
-      </motion.div>
+      </div>
 
-      <div className="container mx-auto max-w-7xl py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+      <div className="container mx-auto max-w-7xl py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           
-          <div className="lg:col-span-2 space-y-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-white rounded-xl shadow-md overflow-hidden"
-            >
-              <img
-                src={projectManagementImage}
-                alt={t('activities.project_management_title')}
-                className="w-full h-96 object-cover"
-              />
+          <div className="lg:col-span-2">
+            <div className="bg-white border border-gray-100 rounded-sm overflow-hidden">
+              <div className="overflow-hidden">
+                <img
+                  src={projectManagementImage}
+                  alt={t('activities.project_management_title')}
+                  className="w-full h-96 object-cover transition-opacity duration-300 hover:opacity-95"
+                />
+              </div>
               <div className="p-6">
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <p className="text-gray-700 leading-relaxed mb-6 font-light opacity-90">
                   {t('activities.project_management_text_1')}
                 </p>
-                <p className="font-semibold text-gray-800">
+                <p className="font-normal text-gray-800 mb-6 tracking-wide">
                   {t('activities.project_management_text_2')}
                 </p>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 pl-4">
-                  <li>{t('activities.project_management_list_1')}</li>
-                  <li>{t('activities.project_management_list_2')}</li>
-                  <li>{t('activities.project_management_list_3')}</li>
-                  <li>{t('activities.project_management_list_4')}</li>
-                  <li>{t('activities.project_management_list_5')}</li>
-                  <li>{t('activities.project_management_list_6')}</li>
-                  <li>{t('activities.project_management_list_7')}</li>
+                <ul className="list-disc list-inside space-y-3 text-gray-700 ml-4 font-light">
+                  <li className="opacity-90">{t('activities.project_management_list_1')}</li>
+                  <li className="opacity-90">{t('activities.project_management_list_2')}</li>
+                  <li className="opacity-90">{t('activities.project_management_list_3')}</li>
+                  <li className="opacity-90">{t('activities.project_management_list_4')}</li>
+                  <li className="opacity-90">{t('activities.project_management_list_5')}</li>
+                  <li className="opacity-90">{t('activities.project_management_list_6')}</li>
+                  <li className="opacity-90">{t('activities.project_management_list_7')}</li>
                 </ul>
               </div>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <ContactSidebar />
-          </motion.div>
+          </div>
         </div>
       </div>
       
+
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 bg-blue-600 text-white rounded-full h-12 w-12 flex items-center justify-center hover:bg-blue-700 transition-colors shadow-lg z-40"
+        className="fixed bottom-6 right-6 bg-gray-800 text-white rounded-sm h-10 w-10 flex items-center justify-center hover:bg-gray-900 transition-colors duration-300 shadow-sm z-40 opacity-80 hover:opacity-100"
         aria-label="Scroll to top"
       >
-        <FiArrowUp size={24} />
+        <FiArrowUp size={18} />
       </button>
     </div>
   );
