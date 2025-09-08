@@ -10,7 +10,7 @@ router.post('/contact', async (req, res) => {
         await newContact.save();
         res.status(201).json({ message: 'Mesajınız uğurla göndərildi!' });
     } catch (error) {
-        res.status(500).json({ message: 'Mesaj göndərilərkən xəta baş verdi.' });
+        res.status(500).json({ message: 'Mesaj göndərilərkən xəta baş verdii.' });
     }
 });
 
