@@ -67,7 +67,8 @@ const HomeSlider = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-[#0b0d27]">
-
+      <Link to="/about" className="absolute inset-0 z-10" aria-label="Go to About Us page"></Link>
+      
       <div 
         className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
         style={{
@@ -76,7 +77,7 @@ const HomeSlider = () => {
         }}
       ></div>
       <div className="absolute inset-0 bg-black/30"></div>
-      <div className="relative z-10 flex flex-col justify-center h-full text-white px-8 md:px-16 lg:px-32">
+      <div className="relative z-20 flex flex-col justify-center h-full text-white px-8 md:px-16 lg:px-32">
         <div className="max-w-4xl">
           <h2 className="text-xl md:text-2xl font-light mb-2">{slides[currentSlide].title}</h2>
           <h3 className="text-2xl md:text-3xl font-bold mb-6">{slides[currentSlide].subtitle}</h3>
@@ -119,15 +120,6 @@ const HomeSlider = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
-      {slides.map((_, index) => (
-        <Link 
-          key={index}
-          to={`/slide-${index + 1}`}
-          className={`absolute inset-0 z-10 ${currentSlide === index ? 'block' : 'hidden'}`}
-          aria-hidden="true"
-          tabIndex="-1"
-        ></Link>
-      ))}
     </div>
   );
 };

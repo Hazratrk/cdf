@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
-
 
 import EnvironmentalImage from '../assets/img/hse1.jpg';
 import EmployeesSecurityImage from '../assets/img/hse2.jpg';
@@ -14,16 +12,16 @@ const HsePage = () => {
 
   const sections = [
     {
-      title: t('environmental'),
+      title: t('environmental_monitoring'),
       desc: t('environmental_desc'),
       image: EnvironmentalImage,
-      link: "/hse/environmental-monitoring"
+      link: '/hse/environmental-monitoring'
     },
     {
       title: t('employees_security'),
       desc: t('employees_security_desc'),
       image: EmployeesSecurityImage,
-      link: "/hse/employees-security"
+      link: '/hse/employees-security'
     }
   ];
 
@@ -36,10 +34,9 @@ const HsePage = () => {
       <Header />
       <main>
         <section className="container mx-auto px-4 my-16">
-
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-blue-900">
-              Health, Safety and Environment
+              {t('title')}
             </h1>
             <div className="mt-4">
               <svg
@@ -59,7 +56,6 @@ const HsePage = () => {
             </div>
           </div>
 
-
           <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 lg:gap-12">
             {filteredSections.length > 0 ? (
               filteredSections.map((section, index) => (
@@ -67,7 +63,7 @@ const HsePage = () => {
                   key={index}
                   className="w-full md:w-1/2 max-w-xl bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
                 >
-                  <Link to={section.link}>
+                  <Link to={section.link}> 
                     <img
                       src={section.image}
                       alt={section.title}
@@ -75,14 +71,14 @@ const HsePage = () => {
                     />
                     <div className="p-6">
                       <h3 className="text-sm tracking-wider text-gray-500 uppercase mb-2">
-                        Health, Safety and Environment
+                        {t('title')}
                       </h3>
                       <h2 className="text-2xl font-bold text-blue-900 mb-3">
                         {section.title}
                       </h2>
                       <p className="text-gray-600 mb-4">{section.desc}</p>
                       <span className="inline-flex items-center text-blue-700 font-medium hover:underline">
-                        Read More →
+                        {t('read_more')} →
                       </span>
                     </div>
                   </Link>
@@ -96,7 +92,6 @@ const HsePage = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 };

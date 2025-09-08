@@ -1,10 +1,12 @@
 // client/src/App.jsx
+
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 
+// Bütün səhifə komponentlərini import edin
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ActivitiesPage from './pages/ActivitiesPage';
@@ -26,45 +28,68 @@ import CompletionWorkoverAdditivesPage from './pages/CompletionWorkoverAdditives
 import EnvironmentalMonitoringPage from './pages/EnvironmentalMonitoringPage'; 
 import EmployeesSecurityPage from './pages/Employees’SecurityPage';
 
+// Admin komponentlərini import edin
+import LoginPage from './pages/Admin/LoginPage';
+import DashboardPage from './pages/Admin/DashboardPage';
+import NotFoundPage from './pages/NotFoundPage'; // Yeni import
+
+// Komponenti ayrı bir funksiyaya ayırırıq ki, useLocation hook-unu istifadə edə bilək
+function AppContent() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
+
+  return (
+    <div className="flex flex-col min-h-screen bg-white">
+      {/* Admin paneldə Header'i gizlədirik */}
+      {!isAdminRoute && <Header />}
+      
+      <main className="flex-grow pt-20">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/activities" element={<ActivitiesPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/hse" element={<HsePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          
+          <Route path="/activities/nonaqueous-drilling-fluids-obm" element={<NonaqueousPage />} />
+          <Route path="/activities/water-base-drilling-fluids" element={<WaterBasePage />} />
+          <Route path="/activities/completion-and-workover-fluids-services" element={<CompletionWorkoverPage />} />
+          <Route path="/activities/drilling-fluids-simulation-software" element={<DrillingSoftwarePage />} />
+          <Route path="/activities/submersible-electric-pumps-and-motors-evn" element={<SubmersiblePumpsPage />} />
+          <Route path="/activities/central-laboratory" element={<CentralLaboratoryPage />} />
+          <Route path="/activities/warehouse" element={<WarehousePage />} />
+          <Route path="/activities/logistic-services" element={<LogisticServicesPage />} />
+          <Route path="/activities/engineering-services" element={<EngineeringServicesPage />} />
+          <Route path="/activities/project-management-services" element={<ProjectManagementPage />} />
+
+          <Route path="/products/drilling-fluid-additives" element={<DrillingFluidAdditivesPage />} />
+          <Route path="/products/completion-and-workover-fluids-additives" element={<CompletionWorkoverAdditivesPage />} />
+
+          <Route path="/hse/environmental-monitoring" element={<EnvironmentalMonitoringPage />} /> 
+          <Route path="/hse/employees-security/" element={<EmployeesSecurityPage />} />
+          
+          {/* Admin marşrutları */}
+          <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
+          <Route path="/admin/login" element={<LoginPage />} />
+          <Route path="/admin/dashboard" element={<DashboardPage />} />
+
+          {/* 404 səhifəsi üçün son marşrut */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </main>
+      
+      {/* Admin paneldə Footer'i gizlədirik */}
+      {!isAdminRoute && <Footer />}
+    </div>
+  );
+}
+
+// App komponenti Router'i əhatə edir
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-white">
-        <Header />
-        
-        <main className="flex-grow pt-20">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/activities" element={<ActivitiesPage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/hse" element={<HsePage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            
-           
-            <Route path="/activities/nonaqueous-drilling-fluids-obm" element={<NonaqueousPage />} />
-            <Route path="/activities/water-base-drilling-fluids" element={<WaterBasePage />} />
-            <Route path="/activities/completion-and-workover-fluids-services" element={<CompletionWorkoverPage />} />
-            <Route path="/activities/drilling-fluids-simulation-software" element={<DrillingSoftwarePage />} />
-            <Route path="/activities/submersible-electric-pumps-and-motors-evn" element={<SubmersiblePumpsPage />} />
-            <Route path="/activities/central-laboratory" element={<CentralLaboratoryPage />} />
-            <Route path="/activities/warehouse" element={<WarehousePage />} />
-            <Route path="/activities/logistic-services" element={<LogisticServicesPage />} />
-            <Route path="/activities/engineering-services" element={<EngineeringServicesPage />} />
-            <Route path="/activities/project-management-services" element={<ProjectManagementPage />} />
-
-
-            <Route path="/products/drilling-fluid-additives" element={<DrillingFluidAdditivesPage />} />
-            <Route path="/products/completion-and-workover-fluids-additives" element={<CompletionWorkoverAdditivesPage />} />
-
-     
-            <Route path="/hse/environmental-monitoring" element={<EnvironmentalMonitoringPage />} /> 
-            <Route path="/hse/employees-security/" element={<EmployeesSecurityPage />} />
-          </Routes>
-        </main>
-        
-        <Footer />
-      </div>
+      <AppContent />
     </Router>
   );
 }

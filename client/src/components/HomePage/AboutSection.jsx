@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-// Şəkilləri assets qovluğundan import edin
+
 import about1_img from '../../assets/img/about1.jpg'; 
 import about2_img from '../../assets/img/about2.jpg'; 
 
@@ -80,37 +80,34 @@ const AboutSection = () => {
 
           <motion.div>
             <motion.h3 variants={fadeInUp} className="text-sm font-semibold tracking-widest text-gray-500 uppercase">
-              {t('whoWeAre.title')}
+              {t('home_page.who_we_are.title')}
             </motion.h3>
             <motion.h2 variants={fadeInUp} className="text-4xl lg:text-5xl font-bold text-gray-800 mt-3 mb-6">
-              {t('whoWeAre.aboutCompany.title')}
+              {t('home_page.who_we_are.title')}
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-gray-600 text-lg leading-relaxed mb-6">
-              {t('whoWeAre.aboutCompany.text1')}
+              {t('home_page.who_we_are.text1')}
             </motion.p>
             <motion.p variants={fadeInUp} className="text-gray-600 text-lg leading-relaxed mb-6">
-              {t('whoWeAre.aboutCompany.text2')}
+              {t('home_page.who_we_are.text2')}
             </motion.p>
             <motion.p variants={fadeInUp} className="text-gray-600 text-lg leading-relaxed mb-10">
-              {t('whoWeAre.aboutCompany.text3')}
+              {t('home_page.who_we_are.text3')}
             </motion.p>
             <motion.div variants={fadeInUp}>
               <Link
                 to="/about"
                 className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-md hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                {t('navigation.aboutUs')}
+                {t('header.about_us')}
               </Link>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="space-y-4 mb-8">
-                <a href="#" className="block font-semibold text-blue-600 hover:underline transition-colors">QUALITY POLICY</a>
-                <a href="#" className="block font-semibold text-blue-600 hover:underline transition-colors">FINANCIAL STATEMENTS FOR 2022</a>
-                <a href="#" className="block font-semibold text-blue-600 hover:underline transition-colors">API Q2</a>
-            </motion.div>
-
             <motion.div variants={fadeInUp} className="mt-8 pt-4 border-t border-gray-200">
-                <a href="#" className="font-semibold text-blue-600 hover:underline transition-colors">ISO 9001</a>
+                <a href="/certificates/iso1.pdf" target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors">ISO 9001</a>
+                <a href="/certificates/iso2.pdf" target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">ISO 14001</a>
+                <a href="/certificates/iso3.pdf" target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">API Q2</a>
+                <a href="/certificates/iso4.pdf" target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">ISO 45001</a>
             </motion.div>
           </motion.div>
         </motion.div>

@@ -11,14 +11,14 @@ const ProductsPage = () => {
 
   const products = [
     {
-      title: t('products.drilling_additives'),
-      description: t('water_base_page.description'), 
+      title: t('products_page.drilling_fluid_additives.title'),
+      description: t('products_page.drilling_fluid_additives.description'), 
       image: DrillingAdditivesImage,
       link: "/products/drilling-fluid-additives"
     },
     {
-      title: t('products.completion_additives'),
-      description: t('completion_workover_fluids_text_1'),
+      title: t('products_page.completion_and_workover_fluids_additives.title'),
+      description: t('products_page.completion_and_workover_fluids_additives.description'),
       image: CompletionAdditivesImage,
       link: "/products/completion-and-workover-fluids-additives"
     }

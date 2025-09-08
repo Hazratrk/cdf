@@ -32,13 +32,13 @@ const HseSection = () => {
       title: t('hseSection.environmentalMonitoring.title'),
       category: t('hseSection.category'),
       image: hse1_img,
-      link: "/health-safety-and-environment/environmental-monitoring"
+      link: "/hse/environmental-monitoring"
     },
     {
       title: t('hseSection.employeesSecurity.title'),
       category: t('hseSection.category'),
       image: hse2_img,
-      link: "/health-safety-and-environment/employees-security"
+      link: "/hse/employees-security"
     }
   ];
 

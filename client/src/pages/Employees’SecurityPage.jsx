@@ -3,8 +3,9 @@ import { motion } from 'framer-motion';
 import { FiArrowUp } from 'react-icons/fi';
 import ContactSidebar from '../../src/components/common/ContactSidebar';
 import { useTranslation } from 'react-i18next';
-import Header from '../../src/components/common/Header';
-import Footer from '../../src/components/common/Footer';
+// Header və Footer importları silindi
+// import Header from '../../src/components/common/Header';
+// import Footer from '../../src/components/common/Footer';
 
 import hse2Image from '../assets/img/hse2.jpg';
 
@@ -13,11 +14,9 @@ const EmployeesSecurityPage = () => {
 
     return (
         <>
-            <Header />
             <div className="bg-white">
                 <div className="container mx-auto max-w-7xl py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                      
                         <div className="lg:col-span-2">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -30,9 +29,11 @@ const EmployeesSecurityPage = () => {
                                     className="w-full h-auto rounded-lg shadow-lg mb-10" 
                                 />
                                 <div className="text-gray-700 space-y-6">
-                                    <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-800 mb-6">{t('employees_security')}</h1>
+                                    <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-800 mb-6">
+                                      {t('employees_security')}
+                                    </h1>
                                     <p className="text-lg leading-relaxed">
-                                        In CDF employees’ health and safety is given first priority in the activity and management of labour protection. Main objective in the works on the system for management of labour protection is to create safe and sound labour condition to increase the effectiveness of production improve product quality and ensure the protection of employees’ health and working capacity in the process of work.
+                                        {t('employees_security_desc_full')}
                                     </p>
                                     <div className="mt-8">
                                         <a 
@@ -41,13 +42,12 @@ const EmployeesSecurityPage = () => {
                                             rel="noopener noreferrer"
                                             className="inline-block text-blue-600 hover:text-blue-800 font-semibold text-lg transition-colors duration-200"
                                         >
-                                            {t('hs_policy')}
+                                            {t('hs_policy')} {/* Bu açarın i18n.js-də olduğundan əmin olun */}
                                         </a>
                                     </div>
                                 </div>
                             </motion.div>
                         </div>
-                       
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -66,7 +66,6 @@ const EmployeesSecurityPage = () => {
             >
                 <FiArrowUp size={24}/>
             </button>
-            <Footer />
         </>
     );
 };
