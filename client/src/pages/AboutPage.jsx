@@ -4,15 +4,12 @@ import { ArrowRight, Cog, Truck, Droplet, FlaskConical } from 'lucide-react';
 import CountUp from 'react-countup';
 import { InView } from 'react-intersection-observer';
 import { useTranslation } from 'react-i18next';
-import axios from 'axios'; // axios-u import edin
-
-
+import axios from 'axios';
 
 import lab1 from '../assets/img/lab1.jpg';
 import lab2 from '../assets/img/lab2.jpg';
 import worker1 from '../assets/img/worker1.jpg';
-import cdfVideo from '../assets/img/cdf3.mp4';
-
+// import cdfVideo from '../assets/img/cdf1.mp4'; // Bu sətir artıq lazım deyil
 
 const AboutPage = () => {
     const { t } = useTranslation();
@@ -20,6 +17,9 @@ const AboutPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    // YouTube video URL'i
+    const youtubeVideoId = 'hGnnrk2E7Vo';
+    const youtubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}`;
 
     useEffect(() => {
         const fetchCertificates = async () => {
@@ -53,16 +53,16 @@ const AboutPage = () => {
                         <p className="text-lg text-gray-700 leading-relaxed">{t('about_us.about_company')}</p>
                         <p className="text-lg text-gray-700 leading-relaxed mt-4">{t('about_us.description_1')}</p>
                         <p className="text-lg text-gray-700 leading-relaxed mt-4">{t('about_us.description_2')}</p>
-                        
+
                         {/* Dinamik sertifikat linkləri burada yer alacaq */}
                         <div className="grid grid-cols-2 gap-6 mt-8">
                             {loading && <p className="text-gray-500 col-span-2">Sertifikatlar yüklənir...</p>}
                             {error && <p className="text-red-500 col-span-2">{error}</p>}
                             {!loading && !error && certificates.map((cert) => (
-                                <Link 
-                                    key={cert._id} 
-                                    to={cert.imageUrl} 
-                                    target="_blank" 
+                                <Link
+                                    key={cert._id}
+                                    to={cert.imageUrl}
+                                    target="_blank"
                                     className="text-cyan-600 hover:underline font-medium block"
                                 >
                                     {cert.title}
@@ -73,7 +73,7 @@ const AboutPage = () => {
                 </div>
             </div>
 
-            
+
 
             <section className="py-20 bg-[#0d101d]">
                 <div className="container mx-auto px-4 text-center">
@@ -87,11 +87,11 @@ const AboutPage = () => {
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {certificates.map((cert) => (
-                                <a 
-                                    key={cert._id} 
-                                    href={cert.imageUrl} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
+                                <a
+                                    key={cert._id}
+                                    href={cert.imageUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="bg-gradient-to-br from-[#1a1d2e] to-[#22263d] p-6 rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-500"
                                 >
                                     <img
@@ -107,27 +107,26 @@ const AboutPage = () => {
                 </div>
             </section>
 
-        
+
 
             <section className="py-24 bg-[#0b0e1a]">
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center text-white mb-12">{t('about_us.title')}</h2>
                     <div className="relative w-full max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
-                        <video
-                            className="w-full h-[700px] object-cover"
-                            controls
-                            loop
-                            autoPlay
-                            muted
-                        >
-                            <source src={cdfVideo} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
+                        {/* Local videodan YouTube embed-ə keçid */}
+                        <iframe
+                            className="w-full aspect-video" // aspect-ratio for video
+                            src={youtubeEmbedUrl}
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen>
+                        </iframe>
                     </div>
                 </div>
             </section>
 
-            
+
 
             <div className="container mx-auto px-4 mt-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -146,7 +145,7 @@ const AboutPage = () => {
                 </div>
             </div>
 
-            
+
             <div className="container mx-auto px-4 py-20">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div>
