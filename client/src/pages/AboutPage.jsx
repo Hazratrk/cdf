@@ -11,7 +11,7 @@ import axios from 'axios'; // axios-u import edin
 import lab1 from '../assets/img/lab1.jpg';
 import lab2 from '../assets/img/lab2.jpg';
 import worker1 from '../assets/img/worker1.jpg';
-import cdfVideo from '../assets/img/cdf2.mp4';
+import cdfVideo from '../assets/img/cdf3.mp4';
 
 
 const AboutPage = () => {
