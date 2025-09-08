@@ -9,7 +9,7 @@ import axios from 'axios';
 import lab1 from '../assets/img/lab1.jpg';
 import lab2 from '../assets/img/lab2.jpg';
 import worker1 from '../assets/img/worker1.jpg';
-// import cdfVideo from '../assets/img/cdf1.mp4'; // Bu sətir artıq lazım deyil
+
 
 const AboutPage = () => {
     const { t } = useTranslation();
@@ -17,7 +17,7 @@ const AboutPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // YouTube video URL'i
+
     const youtubeVideoId = 'hGnnrk2E7Vo';
     const youtubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}`;
 
