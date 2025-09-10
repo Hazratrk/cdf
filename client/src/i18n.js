@@ -112,6 +112,8 @@ const resources = {
         about_us: 'Haqqımızda'
       },
       activities: {
+          "submersible_pumps_text_full": "Müştərinin tələbi ilə, CDF LLC LUKOIL EPU Service tərəfindən istehsal olunan dalğıc elektrik mərkəzəqaçma nasosları və Dalğıc Elektrik Mühərrikləri (EVN) təchiz edə bilər."
+,
         nonaqueous_drilling_fluids_obm: "Qeyri-sulu Qazma Məhlulları (OBM)",
         water_base_drilling_fluids: "Su Əsaslı Qazma Məhlulları",
         completion_workover_fluids_services: "Tamamlama və Əsaslı Təmir Məhlulları Xidmətləri",
@@ -629,6 +631,7 @@ const resources = {
         submersible_electric_centrifugal_pumps_and_submersible_electric_motors_for_esp_drive_evn: "Submersible Electric Centrifugal Pumps and Submersible Electric Motors for ESP drive (EVN)",
         central_laboratory: "Central Laboratory",
         warehouse: "Warehouse",
+          "submersible_pumps_text_full": "At the client's request, CDF can supply submersible electric centrifugal pumps and submersible electric motors for ESP drive (EVN), produced by LLC LUKOIL EPU Service.",
         logistic_services: "Logistic Services",
         engineering_services: "Engineering Services",
         project_management_services: "Project Management Services",
@@ -1129,6 +1132,7 @@ const resources = {
         submersible_electric_centrifugal_pumps_and_submersible_electric_motors_for_esp_drive_evn: "Погружные электрические центробежные насосы и погружные электродвигатели для привода ESP (EVN)",
         central_laboratory: "Центральная лаборатория",
         warehouse: "Склад",
+            "submersible_pumps_text_full": "По запросу клиента, CDF может поставлять погружные электрические центробежные насосы и погружные электродвигатели для привода ЭЦН (EVN), производимые ООО «ЛУКОЙЛ ЭПУ Сервис».",
         logistic_services: "Логистические услуги",
         engineering_services: "Инженерные услуги",
         project_management_services: "Услуги по управлению проектами",

@@ -15,10 +15,12 @@ const SubmersiblePumpsPage = () => {
 
   return (
     <div className="bg-white min-h-screen">
-   
+      {/* Header import edilmədiyi üçün burada yoxdur */}
+
       <div className="bg-[#0b0d27] text-white py-16 lg:py-20 flex items-center justify-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-center tracking-tight">
-          {t('activities.submersible_pumps_title')}
+          {/* Bu başlıq 'activities.submersible_pumps_title' açarından gəlir. */}
+          {t('activities.submersible_electric_centrifugal_pumps_and_submersible_electric_motors_for_esp_drive_evn')}
         </h1>
       </div>
 
@@ -30,7 +32,7 @@ const SubmersiblePumpsPage = () => {
               <div className="relative w-full h-64 bg-gray-100 overflow-hidden">
                 <img
                   src={obm5}
-                  alt={t('activities.submersible_pumps_title')}
+                  alt={t('activities.submersible_electric_centrifugal_pumps_and_submersible_electric_motors_for_esp_drive_evn')}
                   className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                   onLoad={handleImageLoad}
                   loading="lazy"
@@ -43,7 +45,8 @@ const SubmersiblePumpsPage = () => {
               </div>
               <div className="p-6">
                 <p className="text-gray-700 leading-relaxed font-light opacity-90">
-                  {t('activities.submersible_pumps_text')}
+                  {/* Tərcümə edilmiş mətn */}
+                  {t('activities.submersible_pumps_text_full')} 
                 </p>
               </div>
             </div>
@@ -55,7 +58,6 @@ const SubmersiblePumpsPage = () => {
         </div>
       </div>
       
-
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="fixed bottom-6 right-6 bg-gray-800 text-white rounded-sm h-10 w-10 flex items-center justify-center hover:bg-gray-900 transition-colors duration-300 shadow-sm z-40 opacity-80 hover:opacity-100"
@@ -63,6 +65,8 @@ const SubmersiblePumpsPage = () => {
       >
         <FiArrowUp size={18} />
       </button>
+
+      {/* Footer import edilmədiyi üçün burada yoxdur */}
     </div>
   );
 };
