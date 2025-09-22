@@ -3,9 +3,7 @@ import { motion } from 'framer-motion';
 import { FiArrowUp } from 'react-icons/fi';
 import ContactSidebar from '../../src/components/common/ContactSidebar';
 import { useTranslation } from 'react-i18next';
-// Header və Footer importları silindi
-// import Header from '../../src/components/common/Header';
-// import Footer from '../../src/components/common/Footer';
+
 
 import hse2Image from '../assets/img/hse2.jpg';
 
@@ -42,7 +40,7 @@ const EmployeesSecurityPage = () => {
                                             rel="noopener noreferrer"
                                             className="inline-block text-blue-600 hover:text-blue-800 font-semibold text-lg transition-colors duration-200"
                                         >
-                                            {t('hs_policy')} {/* Bu açarın i18n.js-də olduğundan əmin olun */}
+                                            {t('hs_policy')} 
                                         </a>
                                     </div>
                                 </div>

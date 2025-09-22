@@ -28,7 +28,7 @@ const Header = () => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    // Close mobile menu if open
+
     setMobileMenuOpen(false);
   };
 
@@ -64,13 +64,13 @@ const Header = () => {
     { 
       name: 'LinkedIn', 
       icon: <FiLinkedin size={24} />, 
-      link: 'https://www.linkedin.com/company/caspian-drilling-fluids/',
+      link: 'https://www.linkedin.com/company/caspian-drilling-fluids/posts/?feedView=all',
       description: 'Follow us on LinkedIn for professional updates'
     },
     { 
       name: 'Instagram', 
       icon: <FiInstagram size={24} />, 
-      link: 'https://www.instagram.com/caspiandrillingfluids/',
+      link: 'https://www.instagram.com/caspian.drilling.fluids?utm_source=ig_web_button_share_sheet&igsh=dTR3c2UxbmxsdDBq',
       description: 'Follow us on Instagram for visual content'
     },
     { 
@@ -118,7 +118,7 @@ const Header = () => {
     exit: { opacity: 0, x: 50 }
   };
 
-  // Get current page name for display
+
   const getCurrentPageName = () => {
     const currentPage = navLinksData.find(link => link.path === location.pathname);
     return currentPage ? currentPage.name : t('header.home');
@@ -130,7 +130,7 @@ const Header = () => {
       ${scrolled ? 'py-3 shadow-lg bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a]/95 backdrop-blur-md' : 'py-5 bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a]'}`}
     >
       <div className="container mx-auto flex justify-between items-center px-4">
-        {/* Logo */}
+      
         <Link to="/" className="flex items-center gap-3 group">
           <motion.img
             src={Logo}
@@ -145,7 +145,7 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Navigation */}
+    
         <nav className="hidden lg:flex items-center space-x-8">
           {navLinksData.map((link) => (
             <div
@@ -166,7 +166,7 @@ const Header = () => {
                 {link.name}
               </NavLink>
               
-              {/* Active indicator */}
+             
               <AnimatePresence>
                 {location.pathname === link.path && (
                   <motion.div
@@ -181,9 +181,9 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Right side actions */}
+
         <div className="flex items-center space-x-4 relative">
-          {/* Language selector */}
+       
           <div className="hidden md:flex items-center space-x-2 bg-[#1e293b] rounded-lg p-1">
             {['az', 'en', 'ru'].map((lng) => (
               <motion.button
@@ -202,7 +202,7 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Social media panel trigger */}
+        
           <motion.button 
             whileHover={{ scale: 1.1 }} 
             whileTap={{ scale: 0.9 }} 
@@ -214,7 +214,7 @@ const Header = () => {
           </motion.button>
         </div>
 
-        {/* Mobile menu button */}
+ 
         <div className="lg:hidden">
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
@@ -225,7 +225,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Social media panel */}
+
       <AnimatePresence>
         {socialsOpen && (
           <>
@@ -285,7 +285,7 @@ const Header = () => {
                   ))}
                 </motion.div>
                 
-                {/* Contact Information */}
+               
                 <motion.div 
                   className="bg-[#0f172a] p-5 rounded-xl border border-cyan-500/20"
                   initial={{ opacity: 0 }}
@@ -305,7 +305,7 @@ const Header = () => {
         )}
       </AnimatePresence>
 
-      {/* Mobile menu */}
+ 
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -344,7 +344,7 @@ const Header = () => {
               ))}
             </div>
             
-            {/* Mobile social links */}
+          
             <div className="p-4 border-t border-cyan-500/10">
               <h3 className="text-cyan-400 font-semibold mb-3 px-2">Connect With Us</h3>
               <div className="grid grid-cols-3 gap-3">

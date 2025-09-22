@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { FiArrowUp } from 'react-icons/fi';
 import ContactSidebar from '../../src/components/common/ContactSidebar';
 import { useTranslation } from 'react-i18next';
-// Header və Footer importları silindi
+
 
 import hse1Image from '../assets/img/hse1.jpg';
 
 const EnvironmentalMonitoringPage = () => {
-    // 'hse' ad boşluğunu istifadə edirik
+
     const { t } = useTranslation('hse'); 
 
     return (

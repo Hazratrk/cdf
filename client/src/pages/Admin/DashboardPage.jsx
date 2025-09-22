@@ -8,10 +8,10 @@ const DashboardPage = () => {
     const [certificates, setCertificates] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [activeTab, setActiveTab] = useState('messages'); // 'messages' və ya 'certificates'
+    const [activeTab, setActiveTab] = useState('messages'); 
     const navigate = useNavigate();
 
-    // Sertifikat forması üçün statelər
+  
     const [newCertTitle, setNewCertTitle] = useState('');
     const [newCertFile, setNewCertFile] = useState(null);
     const [uploading, setUploading] = useState(false);
@@ -26,13 +26,13 @@ const DashboardPage = () => {
 
         const fetchData = async () => {
             try {
-                // Mesajları gətirmək
+        
                 const messagesResponse = await axios.get('http://localhost:8000/api/admin/messages', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setMessages(messagesResponse.data);
 
-                // Sertifikatları gətirmək
+        
                 const certsResponse = await axios.get('http://localhost:8000/api/admin/certificates');
                 setCertificates(certsResponse.data);
 
@@ -142,7 +142,7 @@ const DashboardPage = () => {
 
     return (
         <div className="flex min-h-screen bg-gray-100 text-gray-800">
-            {/* Sidebar */}
+
             <aside className="w-64 bg-[#0b0d27] text-white p-6 flex flex-col items-center shadow-lg">
                 <div className="flex items-center mb-10">
                     <img src="https://i.ibb.co/6P1M3zY/logo.png" alt="Logo" className="w-10 h-10 mr-3" />
@@ -170,7 +170,7 @@ const DashboardPage = () => {
                 </button>
             </aside>
 
-            {/* Main Content */}
+
             <main className="flex-1 p-10 overflow-auto">
                 {activeTab === 'messages' && (
                     <section>
@@ -226,7 +226,7 @@ const DashboardPage = () => {
                     <section>
                         <h2 className="text-3xl font-bold mb-8">Sertifikatlar</h2>
                         
-                        {/* Yeni Sertifikat Yükləmə Forması */}
+               
                         <div className="bg-white p-6 rounded-lg shadow-md mb-8">
                             <h3 className="text-xl font-semibold mb-4">Yeni Sertifikat Yüklə</h3>
                             <form onSubmit={handleCertificateUpload} className="space-y-4">
@@ -263,7 +263,7 @@ const DashboardPage = () => {
                             </form>
                         </div>
 
-                        {/* Sertifikatların Siyahısı */}
+                   
                         {certificates.length === 0 ? (
                             <p className="text-center text-gray-500">Hələlik heç bir sertifikat yoxdur.</p>
                         ) : (

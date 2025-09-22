@@ -3,26 +3,26 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
-import multer from 'multer'; // Fayl yükləmə üçün
+import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
 import Contact from '../models/Contact.js'; 
-import Certificate from '../models/Certificate.js'; // Yeni modeli import edin
+import Certificate from '../models/Certificate.js'; 
 
 dotenv.config();
 
 const router = express.Router();
 
-// Sertifikatları saxlamaq üçün qovluq yaratmaq
+
 const UPLOADS_FOLDER = path.join(process.cwd(), 'uploads');
 if (!fs.existsSync(UPLOADS_FOLDER)) {
     fs.mkdirSync(UPLOADS_FOLDER, { recursive: true });
 }
 
-// Multer üçün yaddaş mühitini təyin edin
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/'); // Şəkillər bu qovluğa yüklənəcək
+        cb(null, 'uploads/'); 
     },
     filename: (req, file, cb) => {
         cb(null, `${Date.now()}-${file.originalname}`);
@@ -47,7 +47,7 @@ const authenticateToken = (req, res, next) => {
     });
 };
 
-// --- Login Yolu ---
+
 router.post('/login', (req, res) => {
     const { password } = req.body;
 
@@ -59,9 +59,9 @@ router.post('/login', (req, res) => {
     }
 });
 
-// --- Mesajlar Üçün API Marşrutları ---
 
-// Mesajları gətirmək üçün yol
+
+
 router.get('/messages', authenticateToken, async (req, res) => {
     try {
         const messages = await Contact.find().sort({ createdAt: -1 });
@@ -71,7 +71,7 @@ router.get('/messages', authenticateToken, async (req, res) => {
     }
 });
 
-// Mesajı silmək üçün yol
+
 router.delete('/messages/:id', authenticateToken, async (req, res) => {
     try {
         const result = await Contact.findByIdAndDelete(req.params.id);
@@ -84,9 +84,9 @@ router.delete('/messages/:id', authenticateToken, async (req, res) => {
     }
 });
 
-// --- Sertifikatlar üçün API Marşrutları ---
 
-// Yeni sertifikat yükləmək
+
+
 router.post('/certificates', authenticateToken, upload.single('certificateImage'), async (req, res) => {
     if (!req.file) {
         return res.status(400).json({ message: 'Şəkil daxil edilməyib.' });
@@ -104,7 +104,7 @@ router.post('/certificates', authenticateToken, upload.single('certificateImage'
     }
 });
 
-// Bütün sertifikatları gətirmək
+
 router.get('/certificates', async (req, res) => {
     try {
         const certificates = await Certificate.find().sort({ uploadDate: -1 });
@@ -114,7 +114,7 @@ router.get('/certificates', async (req, res) => {
     }
 });
 
-// Sertifikatı silmək
+
 router.delete('/certificates/:id', authenticateToken, async (req, res) => {
     try {
         const certificate = await Certificate.findById(req.params.id);

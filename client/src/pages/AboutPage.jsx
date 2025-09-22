@@ -24,7 +24,7 @@ const AboutPage = () => {
     useEffect(() => {
         const fetchCertificates = async () => {
             try {
-                // Sertifikatları back-end API-dan gətiririk
+              
                 const response = await axios.get('http://localhost:8000/api/admin/certificates');
                 setCertificates(response.data);
             } catch (err) {
@@ -54,7 +54,7 @@ const AboutPage = () => {
                         <p className="text-lg text-gray-700 leading-relaxed mt-4">{t('about_us.description_1')}</p>
                         <p className="text-lg text-gray-700 leading-relaxed mt-4">{t('about_us.description_2')}</p>
 
-                        {/* Dinamik sertifikat linkləri burada yer alacaq */}
+                       
                         <div className="grid grid-cols-2 gap-6 mt-8">
                             {loading && <p className="text-gray-500 col-span-2">Sertifikatlar yüklənir...</p>}
                             {error && <p className="text-red-500 col-span-2">{error}</p>}
@@ -113,9 +113,9 @@ const AboutPage = () => {
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center text-white mb-12">{t('about_us.title')}</h2>
                     <div className="relative w-full max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
-                        {/* Local videodan YouTube embed-ə keçid */}
+                 
                         <iframe
-                            className="w-full aspect-video" // aspect-ratio for video
+                            className="w-full aspect-video" 
                             src={youtubeEmbedUrl}
                             title="YouTube video player"
                             frameBorder="0"

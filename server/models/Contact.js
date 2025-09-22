@@ -16,7 +16,7 @@ const ContactSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-// Modeli 'Contact' adını veririk, bu da MongoDB-də 'contacts' kolleksiyası yaradır
+
 const Contact = mongoose.model('Contact', ContactSchema); 
 
 export default Contact;

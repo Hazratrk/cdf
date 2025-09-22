@@ -15,11 +15,11 @@ const SubmersiblePumpsPage = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Header import edilmədiyi üçün burada yoxdur */}
+   
 
       <div className="bg-[#0b0d27] text-white py-16 lg:py-20 flex items-center justify-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-center tracking-tight">
-          {/* Bu başlıq 'activities.submersible_pumps_title' açarından gəlir. */}
+        
           {t('activities.submersible_electric_centrifugal_pumps_and_submersible_electric_motors_for_esp_drive_evn')}
         </h1>
       </div>
@@ -45,7 +45,7 @@ const SubmersiblePumpsPage = () => {
               </div>
               <div className="p-6">
                 <p className="text-gray-700 leading-relaxed font-light opacity-90">
-                  {/* Tərcümə edilmiş mətn */}
+        
                   {t('activities.submersible_pumps_text_full')} 
                 </p>
               </div>
@@ -66,7 +66,7 @@ const SubmersiblePumpsPage = () => {
         <FiArrowUp size={18} />
       </button>
 
-      {/* Footer import edilmədiyi üçün burada yoxdur */}
+
     </div>
   );
 };

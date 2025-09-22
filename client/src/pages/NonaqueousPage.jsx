@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { FiArrowUp } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
-// ContactSidebar komponentini import edirik
+
 import ContactSidebar from '../components/common/ContactSidebar'; 
 
 import obm1 from '../assets/img/obm1.jpg';
@@ -38,7 +38,7 @@ const NonaqueousPage = () => {
             </div>
           </div>
 
-          {/* Əvvəlki formanı bu komponentlə əvəz edirik */}
+         
           <ContactSidebar />
           
         </div>

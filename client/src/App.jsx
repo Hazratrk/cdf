@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'r
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 
-// Bütün səhifə komponentlərini import edin
+
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ActivitiesPage from './pages/ActivitiesPage';
@@ -28,19 +28,19 @@ import CompletionWorkoverAdditivesPage from './pages/CompletionWorkoverAdditives
 import EnvironmentalMonitoringPage from './pages/EnvironmentalMonitoringPage'; 
 import EmployeesSecurityPage from './pages/Employees’SecurityPage';
 
-// Admin komponentlərini import edin
+
 import LoginPage from './pages/Admin/LoginPage';
 import DashboardPage from './pages/Admin/DashboardPage';
-import NotFoundPage from './pages/NotFoundPage'; // Yeni import
+import NotFoundPage from './pages/NotFoundPage'; 
 
-// Komponenti ayrı bir funksiyaya ayırırıq ki, useLocation hook-unu istifadə edə bilək
+
 function AppContent() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Admin paneldə Header'i gizlədirik */}
+    
       {!isAdminRoute && <Header />}
       
       <main className="flex-grow pt-20">
@@ -69,23 +69,23 @@ function AppContent() {
           <Route path="/hse/environmental-monitoring" element={<EnvironmentalMonitoringPage />} /> 
           <Route path="/hse/employees-security/" element={<EmployeesSecurityPage />} />
           
-          {/* Admin marşrutları */}
+ 
           <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
           <Route path="/admin/login" element={<LoginPage />} />
           <Route path="/admin/dashboard" element={<DashboardPage />} />
 
-          {/* 404 səhifəsi üçün son marşrut */}
+        
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       
-      {/* Admin paneldə Footer'i gizlədirik */}
+      
       {!isAdminRoute && <Footer />}
     </div>
   );
 }
 
-// App komponenti Router'i əhatə edir
+
 function App() {
   return (
     <Router>
