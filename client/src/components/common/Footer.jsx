@@ -27,8 +27,8 @@ const Footer = () => {
             <p className="mb-3 text-sm">Baku, Azerbaijan —<br />8 November 25 Ave, Baku White City business center</p>
             <p className="mb-3 text-sm">Kazakhstan, Aktau city —<br />industrial zone 4, section 7/1, CDF INTERNATIONAL FZCO</p>
             <p className="mb-4 text-sm">(UAE) Dubai —<br />Dubai Silicon Oasis JFZA Properties</p>
-            <a href="mailto:office@caspland.com" className="block text-sm hover:text-cyan-400 transition-all duration-300">
-              office@caspland.com
+            <a href="mailto:office@caspiandf.com" className="block text-sm hover:text-cyan-400 transition-all duration-300">
+              office@caspiandf.com
             </a>
             <a href="tel:+994124881049" className="block mt-2 text-sm hover:text-cyan-400 transition-all duration-300">
               AZE (+994 12) 488-10-49
