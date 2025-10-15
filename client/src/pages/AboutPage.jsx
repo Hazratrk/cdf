@@ -4,40 +4,64 @@ import { ArrowRight, Cog, Truck, Droplet, FlaskConical } from 'lucide-react';
 import CountUp from 'react-countup';
 import { InView } from 'react-intersection-observer';
 import { useTranslation } from 'react-i18next';
-import axios from 'axios';
 
 import lab1 from '../assets/img/lab1.jpg';
 import lab2 from '../assets/img/lab2.jpg';
 import worker1 from '../assets/img/worker1.jpg';
 
 
+import iso1Pdf from '../assets/img/certificates/iso1.pdf';
+import iso2Pdf from '../assets/img/certificates/iso2.pdf';
+import iso3Pdf from '../assets/img/certificates/iso3.pdf';
+import iso4Pdf from '../assets/img/certificates/iso4.pdf';
+
+
+import iso1Img from '../assets/img/iso1.png';
+import iso2Img from '../assets/img/iso2.png';
+import iso3Img from '../assets/img/iso4.png';
+import iso4Img from '../assets/img/iso3.png';
+
 const AboutPage = () => {
     const { t } = useTranslation();
     const [certificates, setCertificates] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false); 
     const [error, setError] = useState(null);
-
 
     const youtubeVideoId = 'hGnnrk2E7Vo';
     const youtubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}`;
 
     useEffect(() => {
-        const fetchCertificates = async () => {
-            try {
-              
-                const response = await axios.get('http://localhost:8000/api/admin/certificates');
-                setCertificates(response.data);
-            } catch (err) {
-                setError('Sertifikatlar gətirilərkən xəta baş verdi.');
-                console.error("Error fetching certificates:", err);
-            } finally {
-                setLoading(false);
+   
+        const staticCertificates = [
+            {
+                _id: '1',
+                title: 'ISO 45001',
+                imageUrl: iso1Img, 
+                pdfUrl: iso1Pdf    
+            },
+            {
+                _id: '2',
+                title: 'ISO 9001',
+                imageUrl: iso2Img,
+                pdfUrl: iso2Pdf
+            },
+            {
+                _id: '3',
+                title: 'ISO 14001',
+                imageUrl: iso3Img,
+                pdfUrl: iso3Pdf
+            },
+            {
+                _id: '4',
+                title: 'API Q2',
+                imageUrl: iso4Img,
+                pdfUrl: iso4Pdf
             }
-        };
+        ];
 
-        fetchCertificates();
+        setCertificates(staticCertificates);
+        setLoading(false);
     }, []);
-
 
     return (
         <div>
@@ -56,17 +80,16 @@ const AboutPage = () => {
 
                        
                         <div className="grid grid-cols-2 gap-6 mt-8">
-                            {loading && <p className="text-gray-500 col-span-2">Sertifikatlar yüklənir...</p>}
-                            {error && <p className="text-red-500 col-span-2">{error}</p>}
-                            {!loading && !error && certificates.map((cert) => (
-                                <Link
+                            {certificates.map((cert) => (
+                                <a
                                     key={cert._id}
-                                    to={cert.imageUrl}
+                                    href={cert.pdfUrl} 
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-cyan-600 hover:underline font-medium block"
                                 >
                                     {cert.title}
-                                </Link>
+                                </a>
                             ))}
                         </div>
                     </div>
@@ -78,22 +101,19 @@ const AboutPage = () => {
             <section className="py-20 bg-[#0d101d]">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-4xl font-bold text-white mb-12">{t('about_page.certificates_title')}</h2>
-                    {loading ? (
-                        <p className="text-gray-400">Sertifikatlar yüklənir...</p>
-                    ) : error ? (
-                        <p className="text-red-400">{error}</p>
-                    ) : certificates.length === 0 ? (
+                    {certificates.length === 0 ? (
                         <p className="text-gray-400">Hələlik heç bir sertifikat əlavə edilməyib.</p>
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {certificates.map((cert) => (
                                 <a
                                     key={cert._id}
-                                    href={cert.imageUrl}
+                                    href={cert.pdfUrl} 
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="bg-gradient-to-br from-[#1a1d2e] to-[#22263d] p-6 rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-500"
                                 >
+                                   
                                     <img
                                         src={cert.imageUrl}
                                         alt={cert.title}
