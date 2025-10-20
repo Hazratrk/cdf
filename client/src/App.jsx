@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'r
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 
-
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ActivitiesPage from './pages/ActivitiesPage';
@@ -27,12 +26,11 @@ import DrillingFluidAdditivesPage from './pages/DrillingFluidAdditivesPage';
 import CompletionWorkoverAdditivesPage from './pages/CompletionWorkoverAdditivesPage';
 import EnvironmentalMonitoringPage from './pages/EnvironmentalMonitoringPage'; 
 import EmployeesSecurityPage from './pages/Employees’SecurityPage';
-
+import QualityandConformity from './pages/QualityandConformity'; // Yeni əlavə edilən səhifə
 
 import LoginPage from './pages/Admin/LoginPage';
 import DashboardPage from './pages/Admin/DashboardPage';
 import NotFoundPage from './pages/NotFoundPage'; 
-
 
 function AppContent() {
   const location = useLocation();
@@ -51,6 +49,7 @@ function AppContent() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/hse" element={<HsePage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/quality-certificates" element={<QualityandConformity />} /> {/* Yeni əlavə edilən route */}
           
           <Route path="/activities/nonaqueous-drilling-fluids-obm" element={<NonaqueousPage />} />
           <Route path="/activities/water-base-drilling-fluids" element={<WaterBasePage />} />
@@ -67,24 +66,20 @@ function AppContent() {
           <Route path="/products/completion-and-workover-fluids-additives" element={<CompletionWorkoverAdditivesPage />} />
 
           <Route path="/hse/environmental-monitoring" element={<EnvironmentalMonitoringPage />} /> 
-          <Route path="/hse/employees-security/" element={<EmployeesSecurityPage />} />
+          <Route path="/hse/employees-security" element={<EmployeesSecurityPage />} />
           
- 
           <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
           <Route path="/admin/login" element={<LoginPage />} />
           <Route path="/admin/dashboard" element={<DashboardPage />} />
 
-        
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
-      
       
       {!isAdminRoute && <Footer />}
     </div>
   );
 }
-
 
 function App() {
   return (

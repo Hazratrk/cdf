@@ -15,13 +15,82 @@ const resources = {
         read_more: "Ətraflı oxu",
         no_results: "Heç bir nəticə tapılmadı"
       },
+      
     translation: {
       about_us: { 
         title: "Biz Kimik?",
         about_company: "Caspian Drilling Fluids (CDF) qazma və tamamlama məhlullarının satışı, dizaynı, mühəndislik xidmətləri və məhsullarına fokuslanmış neft və qaz mühəndisliyi şirkətidir.",
         description_1: "Qazma və tamamlama məhlulları neft və qaz hasilatının maksimum səviyyədə təmin edilməsində çox mühüm rol oynayır və biz, CDF olaraq, optimal neft-qaz hasilatını təmin etmək üçün kəşfiyyat mərhələsindən hasilata qədər zəruri məhsul və xidmətləri təqdim edirik.",
         description_2: "Şirkətimiz Türkiyənin daxili bazarlarına üzvi kimyəvi maddələrin aparıcı idxalçısıdır. İstanbul və Adana bölgələrində saxlama anbarlarımız var. Geniş çeşiddə məhsullar təklif edərək, Türkiyənin monomer və polimer bazarının təxminən 7%-ni təmin edirik. Eyni zamanda, Adana bölgəsindəki anbarlarımıza kimyəvi tullantılar da idxal edirik."
-      },
+      }, "quality": {
+    "pageTitle": "Keyfiyyət və Uyğunluq Sertifikatları",
+    "pageSubtitle": "Beynəlxalq səviyyədə tanınan sertifikatlar və keyfiyyət sənədləri ilə mükemməlliyə və qanuni tələblərə olan bağlılığımızı nümayiş etdiririk",
+    "tabs": {
+      "certificates": "Beynəlxalq Sertifikatlar",
+      "qualityDocuments": "Keyfiyyət Sənədləri"
+    },
+    "certificates": {
+      "iso9001": "Keyfiyyət İdarəetmə Sistemi",
+      "iso14001": "Ətraf Mühit İdarəetmə Sistemi",
+      "iso45001": "Əməyin Mühafizəsi və Təhlükəsizliyi",
+      "apiQ2": "Keyfiyyət İdarəetmə Sistemi"
+    },
+    "documents": {
+      "qualityPolicy": "Keyfiyyət Siyasəti",
+      "qualityPolicyDesc": "Korporativ Siyasət Sənədi",
+      "conformityCertificate": "Uyğunluq Sertifikatı",
+      "conformityCertificateDesc": "Uyğunluq Təsdiqi",
+      "qualityManual": "Keyfiyyət Təlimatı",
+      "qualityManualDesc": "İdarəetmə Sistemi Təlimatı"
+    },
+    "buttons": {
+      "downloadPdf": "PDF Sertifikatı Yüklə",
+      "downloadDocument": "Sənədi Yüklə"
+    },
+    "registration": {
+      "title": "Qeydiyyat Sertifikatı",
+      "description": "Bütün sertifikatlar və keyfiyyət sənədlərimiz beynəlxalq standartlar və qanuni tələblərə uyğun olaraq qeydiyyatdan keçirilmiş, qorunur və müntəzəm auditlərə tabi tutulur, ən yüksək səviyyədə keyfiyyət təminatı və uyğunluq mükemməlliyini təmin edir."
+    },
+    "modal": {
+      "altText": "Böyüdülmüş görünüş",
+      "close": "Bağla"
+    }
+  },
+      footer: {
+  tagline: 'Qazma və tamamlama məhlullarının dizaynı, mühəndislik xidmətləri və məhsulları',
+  office: 'Ofis',
+  locations: {
+    baku: {
+      country: 'Bakı, Azərbaycan',
+      address: '8 Noyabr 25 Ave, Bakı White City iş mərkəzi'
+    },
+    aktau: {
+      country: 'Qazaxstan, Aktau şəhəri',
+      address: 'sənaye zonası 4, bölmə 7/1, CDF INTERNATIONAL FZCO'
+    },
+    dubai: {
+      country: 'BƏƏ, Dubai',
+      address: 'Dubai Silicon Oasis JFZA Properties'
+    }
+  },
+  contact: {
+    email: 'office@caspiandf.com',
+    phone: {
+      aze: 'AZE (+994 12) 488-10-49',
+      uae: 'BƏƏ (+971) 50-79-71-179'
+    }
+  },
+  links: {
+    title: 'Linkləri',
+    home: 'Ana Səhifə',
+    activities: 'Fəaliyyətlər',
+    products: 'Məhsullar',
+    hse: 'Sağlamlıq, Təhlükəsizlik və Ətraf Mühit',
+    about_us: 'Haqqımızda'
+  },
+  getInTouch: 'Bizimlə Əlaqə Saxlayın',
+  copyright: 'CDF © Bütün Hüquqlar Qorunur 2025'
+},
       home_page: {
         who_we_are: {
           title: "Biz Kimik?",
@@ -104,12 +173,23 @@ const resources = {
         },
         readMore: 'Daha Çox Oxu'
       },
-      header: {
-        home: 'Ana Səhifə',
-        activities: 'Fəaliyyətlər',
-        products: 'Məhsullar',
-        hse: 'Sağlamlıq, Təhlükəsizlik və Ətraf Mühit',
-        about_us: 'Haqqımızda'
+   "header": {
+    "home": "Ana Səhifə",
+    "activities": "Fəaliyyətlər", 
+    "products": "Məhsullar",
+    "quality_certificates": "Keyfiyyət və Uyğunluq",
+    "hse": "Sağlamlıq, Təhlükəsizlik və Ətraf Mühit",
+    "about_us": "Haqqımızda",
+    "connectWithUs": "Bizimlə Əlaqə Saxlayın",
+    "linkedin": "LinkedIn",
+    "linkedinDesc": "LinkedIn-də kəsb yenilikləri üçün bizə kəsb seçinə olaraq bizi izləyin",
+    "instagram": "Instagram", 
+    "instagramDesc": "Instagram-da görüntü məzmunu üçün bizə bizi izləyin",
+    "emailUs": "Email Göndərin",
+    "contactInformation": "Əlaqə Məlumatları",
+    "phone_aze": "AZE (+994 12) 488-10-49",
+    "phone_uae": "BƏƏ (+971) 50-79-71-179",
+    "email": "office@caspiandf.com"
       },
       activities: {
           "submersible_pumps_text_full": "Müştərinin tələbi ilə, CDF LLC LUKOIL EPU Service tərəfindən istehsal olunan dalğıc elektrik mərkəzəqaçma nasosları və Dalğıc Elektrik Mühərrikləri (EVN) təchiz edə bilər."
@@ -528,6 +608,74 @@ const resources = {
         about_company: "Caspian Drilling Fluids (CDF) is an oil and gas engineering company focused on sales, designing drilling and completion fluids, engineering services and products.",
         description_1: "Drilling and completion fluids play a very important role in ensuring maximum hydrocarbon production, and we, as the CDF, supply the products and services necessary from the exploration phase to production to ensure optimum oil and gas production.",
         description_2: "Our company is a leading importer of organic chemicals into the Turkish domestic markets. We have storage facilities in the Istanbul and Adana regions. Supplying a broad range of products, we supply about 7% of the Turkish monomer and polymer market. At the same time, we also import chemical waste to our facilities in the Adana region."
+      },"quality": {
+  "pageTitle": "Quality and Conformity Certificates",
+  "pageSubtitle": "We demonstrate our commitment to excellence and legal compliance through internationally recognized certificates and quality documents.",
+  "tabs": {
+    "certificates": "International Certificates",
+    "qualityDocuments": "Quality Documents"
+  },
+  "certificates": {
+    "iso9001": "Quality Management System",
+    "iso14001": "Environmental Management System",
+    "iso45001": "Occupational Health and Safety",
+    "apiQ2": "Quality Management System"
+  },
+  "documents": {
+    "qualityPolicy": "Quality Policy",
+    "qualityPolicyDesc": "Corporate Policy Document",
+    "conformityCertificate": "Certificate of Conformity",
+    "conformityCertificateDesc": "Conformity Approval",
+    "qualityManual": "Quality Manual",
+    "qualityManualDesc": "Management System Manual"
+  },
+  "buttons": {
+    "downloadPdf": "Download PDF Certificate",
+    "downloadDocument": "Download Document"
+  },
+  "registration": {
+    "title": "Certificate of Registration",
+    "description": "All our certificates and quality documents are registered, maintained, and regularly audited in compliance with international standards and legal requirements, ensuring the highest level of quality assurance and conformity excellence."
+  },
+  "modal": {
+    "altText": "Enlarged view",
+    "close": "Close"
+  }
+},
+        footer: {
+        tagline: 'Designing drilling and completion fluids, engineering services and products',
+        office: 'Office',
+        locations: {
+          baku: {
+            country: 'Baku, Azerbaijan',
+            address: '8 November 25 Ave, Baku White City business center'
+          },
+          aktau: {
+            country: 'Kazakhstan, Aktau city',
+            address: 'industrial zone 4, section 7/1, CDF INTERNATIONAL FZCO'
+          },
+          dubai: {
+            country: 'UAE, Dubai',
+            address: 'Dubai Silicon Oasis JFZA Properties'
+          }
+        },
+        contact: {
+          email: 'office@caspiandf.com',
+          phone: {
+            aze: 'AZE (+994 12) 488-10-49',
+            uae: 'UAE (+971) 50-79-71-179'
+          }
+        },
+        links: {
+          title: 'Links',
+          home: 'Home',
+          activities: 'Activities',
+          products: 'Products',
+          hse: 'Health, Safety and Environment',
+          about_us: 'About Us'
+        },
+        getInTouch: 'Get in Touch',
+        copyright: 'CDF © All Rights Reserved 2025'
       },
       home_page: {
         who_we_are: {
@@ -616,13 +764,24 @@ const resources = {
         },
         readMore: 'Read More'
       },
-      header: {
-        home: 'Home',
-        activities: 'Activities',
-        products: 'Products',
-        hse: 'Health, Safety and Environment',
-        about_us: 'About Us'
-      },
+      "header": {
+    "home": "Home",
+    "activities": "Activities",
+    "products": "Products",
+    "quality_certificates": "Quality & Conformity",
+    "hse": "Health, Safety and Environment",
+    "about_us": "About Us",
+    "connectWithUs": "Connect With Us",
+    "linkedin": "LinkedIn",
+    "linkedinDesc": "Follow us on LinkedIn for professional updates",
+    "instagram": "Instagram",
+    "instagramDesc": "Follow us on Instagram for visual content",
+    "emailUs": "Email Us",
+    "contactInformation": "Contact Information",
+    "phone_aze": "AZE (+994 12) 488-10-49",
+    "phone_uae": "UAE (+971) 50-79-71-179",
+    "email": "office@caspiandf.com"
+  },
       activities: {
         nonaqueous_drilling_fluids_obm: "Nonaqueous Drilling Fluids (OBM)",
         water_base_drilling_fluids: "Water Base Drilling Fluids",
@@ -1030,6 +1189,75 @@ const resources = {
         description_1: "Буровые растворы и растворы для заканчивания играют очень важную роль в обеспечении максимальной добычи углеводородов, и мы, как CDF, предоставляем необходимые продукты и услуги от этапа разведки до добычи, чтобы обеспечить оптимальную добычу нефти и газа.",
         description_2: "Наша компания является ведущим импортером органических химикатов на внутренний рынок Турции. У нас есть складские помещения в регионах Стамбула и Аданы. Поставляя широкий спектр продукции, мы обеспечиваем около 7% турецкого рынка мономеров и полимеров. В то же время мы также импортируем химические отходы на наши объекты в регионе Аданы."
       },
+       footer: {
+        tagline: 'Проектирование буровых и завершающих жидкостей, инженерные услуги и продукция',
+        office: 'Офис',
+        locations: {
+          baku: {
+            country: 'Баку, Азербайджан',
+            address: 'проспект 8 Ноября, 25, бизнес-центр Baku White City'
+          },
+          aktau: {
+            country: 'Казахстан, город Актау',
+            address: 'промышленная зона 4, участок 7/1, CDF INTERNATIONAL FZCO'
+          },
+          dubai: {
+            country: 'ОАЭ, Дубай',
+            address: 'Dubai Silicon Oasis JFZA Properties'
+          }
+        },
+        contact: {
+          email: 'office@caspiandf.com',
+          phone: {
+            aze: 'AZE (+994 12) 488-10-49',
+            uae: 'ОАЭ (+971) 50-79-71-179'
+          }
+        },
+        links: {
+          title: 'Ссылки',
+          home: 'Главная',
+          activities: 'Деятельность',
+          products: 'Продукция',
+          hse: 'Охрана труда, техника безопасности и окружающая среда',
+          about_us: 'О нас'
+        },
+        getInTouch: 'Свяжитесь с нами',
+        copyright: 'CDF © Все права защищены 2025'
+      },"quality": {
+  "pageTitle": "Сертификаты Качества и Соответствия",
+  "pageSubtitle": "Мы демонстрируем нашу приверженность совершенству и соблюдению законодательных требований через международно признанные сертификаты и документы по качеству.",
+  "tabs": {
+    "certificates": "Международные Сертификаты",
+    "qualityDocuments": "Документы по Качеству"
+  },
+  "certificates": {
+    "iso9001": "Система Менеджмента Качества",
+    "iso14001": "Система Экологического Менеджмента",
+    "iso45001": "Охрана Труда и Безопасность",
+    "apiQ2": "Система Менеджмента Качества"
+  },
+  "documents": {
+    "qualityPolicy": "Политика в Области Качества",
+    "qualityPolicyDesc": "Корпоративный Политический Документ",
+    "conformityCertificate": "Сертификат Соответствия",
+    "conformityCertificateDesc": "Подтверждение Соответствия",
+    "qualityManual": "Руководство по Качеству",
+    "qualityManualDesc": "Руководство по Системе Менеджмента"
+  },
+  "buttons": {
+    "downloadPdf": "Скачать PDF Сертификат",
+    "downloadDocument": "Скачать Документ"
+  },
+  "registration": {
+    "title": "Свидетельство о Регистрации",
+    "description": "Все наши сертификаты и документы по качеству зарегистрированы, защищены и регулярно проходят аудит в соответствии с международными стандартами и законодательными требованиями, обеспечивая высочайший уровень гарантии качества и соответствия."
+  },
+  "modal": {
+    "altText": "Увеличенный вид",
+    "close": "Закрыть"
+  }
+}
+,
       home_page: {
         who_we_are: {
           title: "Кто мы?",
@@ -1117,12 +1345,24 @@ const resources = {
         },
         readMore: 'Читать Далее'
       },
-      header: {
-        home: 'Главная',
-        activities: 'Виды деятельности',
-        products: 'Продукция',
-        hse: 'Здоровье, Безопасность и Окружающая Среда',
-        about_us: 'О нас'
+     "header": {
+    "home": "Главная",
+    "activities": "Деятельность",
+    "products": "Продукция",
+    "quality_certificates": "Качество и Соответствие",
+    "hse": "Здоровье, Безопасность и Окружающая Среда",
+    "about_us": "О Нас",
+    "connectWithUs": "Свяжитесь с Нами",
+    "linkedin": "LinkedIn",
+    "linkedinDesc": "Следите за нами в LinkedIn для профессиональных новостей",
+    "instagram": "Instagram",
+    "instagramDesc": "Следите за нами в Instagram для визуального контента",
+    "emailUs": "Отправить Email",
+    "contactInformation": "Контактная Информация",
+    "phone_aze": "АЗЕ (+994 12) 488-10-49",
+    "phone_uae": "ОАЭ (+971) 50-79-71-179",
+    "email": "office@caspiandf.com"
+  
       },
       activities: {
         nonaqueous_drilling_fluids_obm: "Буровые растворы на неводной основе (OBM)",

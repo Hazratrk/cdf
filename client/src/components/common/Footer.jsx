@@ -6,6 +6,14 @@ import { useTranslation } from 'react-i18next';
 const Footer = () => {
   const { t } = useTranslation();
 
+  const links = [
+    { name: t('footer.links.home'), path: '/' },
+    { name: t('footer.links.activities'), path: '/activities' },
+    { name: t('footer.links.products'), path: '/products' },
+    { name: t('footer.links.hse'), path: '/hse' },
+    { name: t('footer.links.about_us'), path: '/about' },
+  ];
+
   return (
     <footer className="relative bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] text-gray-400 w-full border-t border-cyan-500/20 shadow-2xl">
       <div className="container mx-auto px-6 py-16">
@@ -15,42 +23,36 @@ const Footer = () => {
           <div>
             <h1 className="text-3xl font-bold text-white mb-3 tracking-wide">CDF</h1>
             <p className="text-sm leading-relaxed text-gray-400">
-              Designing drilling and completion fluids, engineering services and products
+              {t('footer.tagline')}
             </p>
           </div>
 
      
           <div>
             <h3 className="text-lg font-semibold text-cyan-400 mb-6 relative after:absolute after:w-12 after:h-0.5 after:bg-cyan-500 after:left-0 after:-bottom-2">
-              Office
+              {t('footer.office')}
             </h3>
-            <p className="mb-3 text-sm">Baku, Azerbaijan —<br />8 November 25 Ave, Baku White City business center</p>
-            <p className="mb-3 text-sm">Kazakhstan, Aktau city —<br />industrial zone 4, section 7/1, CDF INTERNATIONAL FZCO</p>
-            <p className="mb-4 text-sm">(UAE) Dubai —<br />Dubai Silicon Oasis JFZA Properties</p>
+            <p className="mb-3 text-sm">{t('footer.locations.baku.country')} —<br />{t('footer.locations.baku.address')}</p>
+            <p className="mb-3 text-sm">{t('footer.locations.aktau.country')} —<br />{t('footer.locations.aktau.address')}</p>
+            <p className="mb-4 text-sm">{t('footer.locations.dubai.country')} —<br />{t('footer.locations.dubai.address')}</p>
             <a href="mailto:office@caspiandf.com" className="block text-sm hover:text-cyan-400 transition-all duration-300">
-              office@caspiandf.com
+              {t('footer.contact.email')}
             </a>
             <a href="tel:+994124881049" className="block mt-2 text-sm hover:text-cyan-400 transition-all duration-300">
-              AZE (+994 12) 488-10-49
+              {t('footer.contact.phone.aze')}
             </a>
             <a href="tel:+971507971179" className="block mt-2 text-sm hover:text-cyan-400 transition-all duration-300">
-              UAE (+971) 50-79-71-179
+              {t('footer.contact.phone.uae')}
             </a>
           </div>
 
 
           <div>
             <h3 className="text-lg font-semibold text-cyan-400 mb-6 relative after:absolute after:w-12 after:h-0.5 after:bg-cyan-500 after:left-0 after:-bottom-2">
-              Links
+              {t('footer.links.title')}
             </h3>
             <ul className="space-y-4">
-              {[
-                { name: 'Home', path: '/' },
-                { name: 'Activities', path: '/activities' },
-                { name: 'Products', path: '/products' },
-                { name: 'Health, Safety and Environment', path: '/hse' },
-                { name: 'About Us', path: '/about' },
-              ].map((link, i) => (
+              {links.map((link, i) => (
                 <li key={i}>
                   <Link
                     to={link.path}
@@ -67,7 +69,7 @@ const Footer = () => {
       
           <div>
             <h3 className="text-lg font-semibold text-cyan-400 mb-6 relative after:absolute after:w-12 after:h-0.5 after:bg-cyan-500 after:left-0 after:-bottom-2">
-              Get in Touch
+              {t('footer.getInTouch')}
             </h3>
             <div className="flex space-x-4">
               <a
@@ -88,7 +90,7 @@ const Footer = () => {
 
     
         <div className="mt-12 pt-6 border-t border-cyan-500/20 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-          <p>CDF © All Rights Reserved 2025</p>
+          <p>{t('footer.copyright')}</p>
           <p className="mt-3 md:mt-0">Developed by KH</p>
         </div>
       </div>

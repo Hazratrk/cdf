@@ -3,44 +3,37 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+import about1_img from '../../assets/img/about1.jpg';
+import about2_img from '../../assets/img/about2.jpg';
 
-import about1_img from '../../assets/img/about1.jpg'; 
-import about2_img from '../../assets/img/about2.jpg'; 
+// PDF fayllarını import et
+import iso1Pdf from '../../assets/img/certificates/iso1.pdf';
+import iso2Pdf from '../../assets/img/certificates/iso2.pdf';
+import iso3Pdf from '../../assets/img/certificates/iso3.pdf';
+import iso4Pdf from '../../assets/img/certificates/iso4.pdf';
 
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
   },
 };
 
 const fadeInUp = {
   hidden: { y: 30, opacity: 0 },
   visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      damping: 15,
-    },
+    y: 0, opacity: 1,
+    transition: { type: 'spring', stiffness: 100, damping: 15 },
   },
 };
 
 const fadeInLeft = {
-    hidden: { x: -80, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        duration: 1.5
-      },
-    },
+  hidden: { x: -80, opacity: 0 },
+  visible: {
+    x: 0, opacity: 1,
+    transition: { type: 'spring', duration: 1.5 },
+  },
 };
 
 const AboutSection = () => {
@@ -56,10 +49,9 @@ const AboutSection = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-
           <motion.div className="relative h-[500px]" variants={fadeInLeft}>
             <motion.img
-              src={about1_img} 
+              src={about1_img}
               alt="Drilling fluids"
               initial={{ y: -50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -68,7 +60,7 @@ const AboutSection = () => {
               className="absolute top-0 left-0 w-[65%] h-auto object-contain rounded-lg shadow-2xl z-10"
             />
             <motion.img
-              src={about2_img} 
+              src={about2_img}
               alt="Company workers"
               initial={{ scale: 1.2, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
@@ -94,6 +86,7 @@ const AboutSection = () => {
             <motion.p variants={fadeInUp} className="text-gray-600 text-lg leading-relaxed mb-10">
               {t('home_page.who_we_are.text3')}
             </motion.p>
+
             <motion.div variants={fadeInUp}>
               <Link
                 to="/about"
@@ -103,11 +96,12 @@ const AboutSection = () => {
               </Link>
             </motion.div>
 
+            {/* Sertifikat linkləri */}
             <motion.div variants={fadeInUp} className="mt-8 pt-4 border-t border-gray-200">
-                <a href="/certificates/iso1.pdf" target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors">ISO 9001</a>
-                <a href="/certificates/iso2.pdf" target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">ISO 14001</a>
-                <a href="/certificates/iso3.pdf" target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">API Q2</a>
-                <a href="/certificates/iso4.pdf" target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">ISO 45001</a>
+              <a href={iso1Pdf} target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors">ISO 45001</a>
+              <a href={iso2Pdf} target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">ISO 9001</a>
+              <a href={iso3Pdf} target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">ISO 14001</a>
+              <a href={iso4Pdf} target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">API Q2</a>
             </motion.div>
           </motion.div>
         </motion.div>
