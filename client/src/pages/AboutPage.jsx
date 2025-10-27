@@ -35,21 +35,21 @@ const AboutPage = () => {
         const staticCertificates = [
             {
                 _id: '1',
-                title: 'ISO 45001',
-                imageUrl: iso1Img, 
-                pdfUrl: iso1Pdf    
+                title: 'ISO 9001',
+                imageUrl: iso2Img, 
+                pdfUrl: iso2Pdf    
             },
             {
                 _id: '2',
-                title: 'ISO 9001',
-                imageUrl: iso2Img,
-                pdfUrl: iso2Pdf
-            },
-            {
-                _id: '3',
                 title: 'ISO 14001',
                 imageUrl: iso3Img,
                 pdfUrl: iso3Pdf
+            },
+            {
+                _id: '3',
+                title: 'ISO 45001',
+                imageUrl: iso1Img,
+                pdfUrl: iso1Pdf
             },
             {
                 _id: '4',

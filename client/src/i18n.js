@@ -22,34 +22,21 @@ const resources = {
         about_company: "Caspian Drilling Fluids (CDF) qazma və tamamlama məhlullarının satışı, dizaynı, mühəndislik xidmətləri və məhsullarına fokuslanmış neft və qaz mühəndisliyi şirkətidir.",
         description_1: "Qazma və tamamlama məhlulları neft və qaz hasilatının maksimum səviyyədə təmin edilməsində çox mühüm rol oynayır və biz, CDF olaraq, optimal neft-qaz hasilatını təmin etmək üçün kəşfiyyat mərhələsindən hasilata qədər zəruri məhsul və xidmətləri təqdim edirik.",
         description_2: "Şirkətimiz Türkiyənin daxili bazarlarına üzvi kimyəvi maddələrin aparıcı idxalçısıdır. İstanbul və Adana bölgələrində saxlama anbarlarımız var. Geniş çeşiddə məhsullar təklif edərək, Türkiyənin monomer və polimer bazarının təxminən 7%-ni təmin edirik. Eyni zamanda, Adana bölgəsindəki anbarlarımıza kimyəvi tullantılar da idxal edirik."
-      }, "quality": {
+      },   "quality": {
     "pageTitle": "Keyfiyyət və Uyğunluq Sertifikatları",
-    "pageSubtitle": "Beynəlxalq səviyyədə tanınan sertifikatlar və keyfiyyət sənədləri ilə mükemməlliyə və qanuni tələblərə olan bağlılığımızı nümayiş etdiririk",
+    "pageSubtitle": "Beynəlxalq səviyyədə tanınan sertifikatlar və siyasətlər ilə mükemməlliyə və qanuni tələblərə olan bağlılığımızı nümayiş etdiririk",
     "tabs": {
-      "certificates": "Beynəlxalq Sertifikatlar",
-      "qualityDocuments": "Keyfiyyət Sənədləri"
-    },
-    "certificates": {
-      "iso9001": "Keyfiyyət İdarəetmə Sistemi",
-      "iso14001": "Ətraf Mühit İdarəetmə Sistemi",
-      "iso45001": "Əməyin Mühafizəsi və Təhlükəsizliyi",
-      "apiQ2": "Keyfiyyət İdarəetmə Sistemi"
-    },
-    "documents": {
-      "qualityPolicy": "Keyfiyyət Siyasəti",
-      "qualityPolicyDesc": "Korporativ Siyasət Sənədi",
-      "conformityCertificate": "Uyğunluq Sertifikatı",
-      "conformityCertificateDesc": "Uyğunluq Təsdiqi",
-      "qualityManual": "Keyfiyyət Təlimatı",
-      "qualityManualDesc": "İdarəetmə Sistemi Təlimatı"
+      "certificates": "Sertifikatlar",
+      "policies": "Siyasətlər"
     },
     "buttons": {
       "downloadPdf": "PDF Sertifikatı Yüklə",
       "downloadDocument": "Sənədi Yüklə"
     },
-    "registration": {
-      "title": "Qeydiyyat Sertifikatı",
-      "description": "Bütün sertifikatlar və keyfiyyət sənədlərimiz beynəlxalq standartlar və qanuni tələblərə uyğun olaraq qeydiyyatdan keçirilmiş, qorunur və müntəzəm auditlərə tabi tutulur, ən yüksək səviyyədə keyfiyyət təminatı və uyğunluq mükemməlliyini təmin edir."
+    "policies": {
+      "qualityPolicy": "Keyfiyyət Siyasəti",
+      "environmentalPolicy": "Ətraf Mühit Siyasəti",
+      "healthSafetyPolicy": "Əməyin Mühafizəsi və Təhlükəsizlik Siyasəti"
     },
     "modal": {
       "altText": "Böyüdülmüş görünüş",
@@ -608,39 +595,27 @@ const resources = {
         about_company: "Caspian Drilling Fluids (CDF) is an oil and gas engineering company focused on sales, designing drilling and completion fluids, engineering services and products.",
         description_1: "Drilling and completion fluids play a very important role in ensuring maximum hydrocarbon production, and we, as the CDF, supply the products and services necessary from the exploration phase to production to ensure optimum oil and gas production.",
         description_2: "Our company is a leading importer of organic chemicals into the Turkish domestic markets. We have storage facilities in the Istanbul and Adana regions. Supplying a broad range of products, we supply about 7% of the Turkish monomer and polymer market. At the same time, we also import chemical waste to our facilities in the Adana region."
-      },"quality": {
-  "pageTitle": "Quality and Conformity Certificates",
-  "pageSubtitle": "We demonstrate our commitment to excellence and legal compliance through internationally recognized certificates and quality documents.",
-  "tabs": {
-    "certificates": "International Certificates",
-    "qualityDocuments": "Quality Documents"
-  },
-  "certificates": {
-    "iso9001": "Quality Management System",
-    "iso14001": "Environmental Management System",
-    "iso45001": "Occupational Health and Safety",
-    "apiQ2": "Quality Management System"
-  },
-  "documents": {
-    "qualityPolicy": "Quality Policy",
-    "qualityPolicyDesc": "Corporate Policy Document",
-    "conformityCertificate": "Certificate of Conformity",
-    "conformityCertificateDesc": "Conformity Approval",
-    "qualityManual": "Quality Manual",
-    "qualityManualDesc": "Management System Manual"
-  },
-  "buttons": {
-    "downloadPdf": "Download PDF Certificate",
-    "downloadDocument": "Download Document"
-  },
-  "registration": {
-    "title": "Certificate of Registration",
-    "description": "All our certificates and quality documents are registered, maintained, and regularly audited in compliance with international standards and legal requirements, ensuring the highest level of quality assurance and conformity excellence."
-  },
-  "modal": {
-    "altText": "Enlarged view",
-    "close": "Close"
-  }
+      },   "quality": {
+    "pageTitle": "Quality and Conformity Certificates",
+    "pageSubtitle": "Demonstrating our commitment to excellence and regulatory requirements through internationally recognized certificates and policies",
+    "tabs": {
+      "certificates": "Certificates",
+      "policies": "Policies"
+    },
+    "buttons": {
+      "downloadPdf": "Download PDF Certificate",
+      "downloadDocument": "Download Document"
+    },
+    "policies": {
+      "qualityPolicy": "Quality Policy",
+      "environmentalPolicy": "Environmental Policy",
+      "healthSafetyPolicy": "Occupational Health & Safety Policy"
+    },
+    "modal": {
+      "altText": "Enlarged view",
+      "close": "Close"
+    }
+  
 },
         footer: {
         tagline: 'Designing drilling and completion fluids, engineering services and products',
@@ -1223,39 +1198,26 @@ const resources = {
         },
         getInTouch: 'Свяжитесь с нами',
         copyright: 'CDF © Все права защищены 2025'
-      },"quality": {
-  "pageTitle": "Сертификаты Качества и Соответствия",
-  "pageSubtitle": "Мы демонстрируем нашу приверженность совершенству и соблюдению законодательных требований через международно признанные сертификаты и документы по качеству.",
-  "tabs": {
-    "certificates": "Международные Сертификаты",
-    "qualityDocuments": "Документы по Качеству"
-  },
-  "certificates": {
-    "iso9001": "Система Менеджмента Качества",
-    "iso14001": "Система Экологического Менеджмента",
-    "iso45001": "Охрана Труда и Безопасность",
-    "apiQ2": "Система Менеджмента Качества"
-  },
-  "documents": {
-    "qualityPolicy": "Политика в Области Качества",
-    "qualityPolicyDesc": "Корпоративный Политический Документ",
-    "conformityCertificate": "Сертификат Соответствия",
-    "conformityCertificateDesc": "Подтверждение Соответствия",
-    "qualityManual": "Руководство по Качеству",
-    "qualityManualDesc": "Руководство по Системе Менеджмента"
-  },
-  "buttons": {
-    "downloadPdf": "Скачать PDF Сертификат",
-    "downloadDocument": "Скачать Документ"
-  },
-  "registration": {
-    "title": "Свидетельство о Регистрации",
-    "description": "Все наши сертификаты и документы по качеству зарегистрированы, защищены и регулярно проходят аудит в соответствии с международными стандартами и законодательными требованиями, обеспечивая высочайший уровень гарантии качества и соответствия."
-  },
-  "modal": {
-    "altText": "Увеличенный вид",
-    "close": "Закрыть"
-  }
+      },  "quality": {
+    "pageTitle": "Сертификаты Качества и Соответствия",
+    "pageSubtitle": "Демонстрируем нашу приверженность совершенству и нормативным требованиям через международно признанные сертификаты и политики",
+    "tabs": {
+      "certificates": "Сертификаты",
+      "policies": "Политики"
+    },
+    "buttons": {
+      "downloadPdf": "Скачать PDF Сертификат",
+      "downloadDocument": "Скачать Документ"
+    },
+    "policies": {
+      "qualityPolicy": "Политика Качества",
+      "environmentalPolicy": "Политика в Области Охраны Окружающей Среды",
+      "healthSafetyPolicy": "Политика в Области Охраны Труда и Техники Безопасности"
+    },
+    "modal": {
+      "altText": "Увеличенный вид",
+      "close": "Закрыть"
+    }
 }
 ,
       home_page: {
