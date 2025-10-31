@@ -4,7 +4,6 @@ import { FiArrowUp } from 'react-icons/fi';
 import ContactSidebar from '../../src/components/common/ContactSidebar';
 import { useTranslation } from 'react-i18next';
 
-
 import hse2Image from '../assets/img/hse2.jpg';
 
 const EmployeesSecurityPage = () => {
@@ -28,21 +27,11 @@ const EmployeesSecurityPage = () => {
                                 />
                                 <div className="text-gray-700 space-y-6">
                                     <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-800 mb-6">
-                                      {t('employees_security')}
+                                        {t('employees_security')}
                                     </h1>
                                     <p className="text-lg leading-relaxed">
                                         {t('employees_security_desc_full')}
                                     </p>
-                                    <div className="mt-8">
-                                        <a 
-                                         href="/certificates/hse1.pdf"
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            className="inline-block text-blue-600 hover:text-blue-800 font-semibold text-lg transition-colors duration-200"
-                                        >
-                                            {t('hs_policy')} 
-                                        </a>
-                                    </div>
                                 </div>
                             </motion.div>
                         </div>

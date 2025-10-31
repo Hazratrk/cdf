@@ -98,9 +98,9 @@ const AboutSection = () => {
 
             {/* Sertifikat linkləri */}
             <motion.div variants={fadeInUp} className="mt-8 pt-4 border-t border-gray-200">
-              <a href={iso1Pdf} target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors">ISO 45001</a>
-              <a href={iso2Pdf} target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">ISO 9001</a>
+              <a href={iso2Pdf} target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors">ISO 9001</a>
               <a href={iso3Pdf} target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">ISO 14001</a>
+              <a href={iso1Pdf} target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">ISO 45001</a>
               <a href={iso4Pdf} target="_blank" rel="noopener noreferrer" className="block font-semibold text-blue-600 hover:underline transition-colors mt-2">API Q2</a>
             </motion.div>
           </motion.div>

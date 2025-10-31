@@ -17,7 +17,17 @@ const resources = {
       },
       
     translation: {
-      about_us: { 
+     hseSection: {
+  category: 'Həyat, Sağlamlıq və Ətraf Mühit',
+  environmentalMonitoring: {
+    title: 'Ətraf Mühitin Monitorinqi'
+  },
+  employeesSecurity: {
+    title: 'Əməkdaşların Təhlükəsizliyi'
+  },
+  readMore: 'Ətraflı oxu'
+},
+ about_us: { 
         title: "Biz Kimik?",
         about_company: "Caspian Drilling Fluids (CDF) qazma və tamamlama məhlullarının satışı, dizaynı, mühəndislik xidmətləri və məhsullarına fokuslanmış neft və qaz mühəndisliyi şirkətidir.",
         description_1: "Qazma və tamamlama məhlulları neft və qaz hasilatının maksimum səviyyədə təmin edilməsində çox mühüm rol oynayır və biz, CDF olaraq, optimal neft-qaz hasilatını təmin etmək üçün kəşfiyyat mərhələsindən hasilata qədər zəruri məhsul və xidmətləri təqdim edirik.",

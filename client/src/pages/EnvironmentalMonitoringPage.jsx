@@ -4,11 +4,9 @@ import { FiArrowUp } from 'react-icons/fi';
 import ContactSidebar from '../../src/components/common/ContactSidebar';
 import { useTranslation } from 'react-i18next';
 
-
 import hse1Image from '../assets/img/hse1.jpg';
 
 const EnvironmentalMonitoringPage = () => {
-
     const { t } = useTranslation('hse'); 
 
     return (
@@ -29,21 +27,11 @@ const EnvironmentalMonitoringPage = () => {
                                 />
                                 <div className="text-gray-700 space-y-6">
                                     <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-800 mb-6">
-                                      {t('environmental_monitoring')}
+                                        {t('environmental_monitoring')}
                                     </h1>
                                     <p className="text-lg leading-relaxed">
                                         {t('environmental_desc_full')}
                                     </p>
-                                    <div className="mt-8">
-                                        <a 
-                                        href="/certificates/hse2.pdf" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            className="inline-block text-blue-600 hover:text-blue-800 font-semibold text-lg transition-colors duration-200"
-                                        >
-                                            {t('environmental_policy')}
-                                        </a>
-                                    </div>
                                 </div>
                             </motion.div>
                         </div>
