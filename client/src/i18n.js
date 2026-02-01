@@ -3,18 +3,31 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 const resources = {
-  az: { hse: {
-        title: "Həyat, Sağlamlıq və Ətraf Mühit (HSE)",
-        environmental_monitoring: "Ətraf Mühitin Monitorinqi",
-        environmental_desc: "CDF-in ətraf mühitin monitorinqi sahəsindəki əsas fəaliyyəti...",
-        environmental_desc_full: "CDF-in ətraf mühitin monitorinqi sahəsindəki əsas fəaliyyəti, təbii və antropogen təsirlər nəticəsində sənayedə və tərəfdaş şirkətlərdə ətraf mühitə atılan zərərli tullantıların maye və bərk formada kəmiyyət və keyfiyyət monitorinqini həyata keçirmək, onların kimyəvi tərkibini, çirklənmə dərəcəsini, radioaktiv və hidro-bioloji xüsusiyyətlərini və fiziki xarakteristikalarını müəyyən edən mütəmadi nəzarət və tədqiqat sistemini tətbiq etməkdən ibarətdir.",
-        environmental_policy: "Ətraf Mühit Siyasəti",
-        employees_security: "Əməkdaşların Təhlükəsizliyi",
-        employees_security_desc: "Bütün fəaliyyətlərimizdə işçilərimizin sağlamlığı və təhlükəsizliyi bizim əsas prioritetimizdir.",
-        employees_security_desc_full: "Bütün fəaliyyətlərimizdə işçilərimizin sağlamlığı və təhlükəsizliyi bizim əsas prioritetimizdir. Biz, təhlükəsiz iş şəraitini təmin etmək, peşə xəstəliklərinin qarşısını almaq və bütün işçilər üçün riskləri minimuma endirmək üçün ən yüksək standartları tətbiq edirik. Mütəmadi təlimlər, müasir təhlükəsizlik avadanlıqları və ciddi protokollarımızla hər bir əməkdaşın təhlükəsizliyini təmin edirik.",
-        read_more: "Ətraflı oxu",
-        no_results: "Heç bir nəticə tapılmadı"
-      },
+  az: {  "hse": {
+      "title": "Həyat, Sağlamlıq və Ətraf Mühit (HSE)",
+
+  "environmental_monitoring": "Ətraf Mühitin Monitorinqi",
+  "environmental_desc": "CDF-in ətraf mühitin monitorinqi sahəsində əsas fəaliyyət istiqamətləri.",
+  "environmental_desc_full": "CDF-in ətraf mühitin monitorinqi sahəsindəki əsas fəaliyyəti, təbii və antropogen təsirlər nəticəsində sənaye müəssisələri və tərəfdaş şirkətlər tərəfindən ətraf mühitə atılan zərərli maddələrin maye və bərk formada kəmiyyət və keyfiyyət baxımından monitorinqini həyata keçirməkdən ibarətdir. Bu proses çərçivəsində tullantıların kimyəvi tərkibi, çirklənmə dərəcəsi, radioaktiv, hidro-bioloji xüsusiyyətləri və fiziki xarakteristikaları müəyyən edilir, mütəmadi nəzarət və elmi-tədqiqat sistemləri tətbiq olunur.",
+
+  "environmental_policy": "Ətraf Mühit Siyasəti",
+
+  "employees_security": "Əməkdaşların Təhlükəsizliyi",
+  "employees_security_desc": "Əməkdaşların sağlamlığı və təhlükəsizliyi bizim əsas prioritetimizdir.",
+  "employees_security_desc_full": "Əməkdaşların sağlamlığı və təhlükəsizliyi bizim əsas prioritetimizdir. Biz təhlükəsiz və sağlam iş mühitinin təmin edilməsi, peşə xəstəliklərinin qarşısının alınması və bütün əməkdaşlar üçün risklərin minimuma endirilməsi məqsədilə ən yüksək standartları tətbiq edirik. Mütəmadi təlimlər, müasir təhlükəsizlik avadanlıqları və ciddi daxili prosedurlar vasitəsilə hər bir əməkdaşın təhlükəsizliyi təmin edilir.",
+
+  "certificate_available": "Siyasət mövcuddur",
+  "certificate_description": "Bu xidmət üzrə əməkdaşların sağlamlıq və təhlükəsizlik siyasəti ilə tanış ola bilərsiniz.",
+  "view_certificate": "Siyasəti görüntülə",
+   "policy_available": "Siyasət mövcuddur",
+  "employees_policy_description": "Bu xidmət üzrə əməkdaşların sağlamlıq və təhlükəsizlik siyasəti ilə tanış ola bilərsiniz",
+  "view_certificate": "Siyasəti görüntülə",
+
+  "read_more": "Ətraflı oxu",
+  "no_results": "Heç bir nəticə tapılmadı",
+  "scroll_to_top": "Yuxarı çıx"
+  
+},
       
     translation: {
      hseSection: {
@@ -32,26 +45,34 @@ const resources = {
         about_company: "Caspian Drilling Fluids (CDF) qazma və tamamlama məhlullarının satışı, dizaynı, mühəndislik xidmətləri və məhsullarına fokuslanmış neft və qaz mühəndisliyi şirkətidir.",
         description_1: "Qazma və tamamlama məhlulları neft və qaz hasilatının maksimum səviyyədə təmin edilməsində çox mühüm rol oynayır və biz, CDF olaraq, optimal neft-qaz hasilatını təmin etmək üçün kəşfiyyat mərhələsindən hasilata qədər zəruri məhsul və xidmətləri təqdim edirik.",
         description_2: "Şirkətimiz Türkiyənin daxili bazarlarına üzvi kimyəvi maddələrin aparıcı idxalçısıdır. İstanbul və Adana bölgələrində saxlama anbarlarımız var. Geniş çeşiddə məhsullar təklif edərək, Türkiyənin monomer və polimer bazarının təxminən 7%-ni təmin edirik. Eyni zamanda, Adana bölgəsindəki anbarlarımıza kimyəvi tullantılar da idxal edirik."
-      },   "quality": {
-    "pageTitle": "Keyfiyyət və Uyğunluq Sertifikatları",
-    "pageSubtitle": "Beynəlxalq səviyyədə tanınan sertifikatlar və siyasətlər ilə mükemməlliyə və qanuni tələblərə olan bağlılığımızı nümayiş etdiririk",
-    "tabs": {
-      "certificates": "Sertifikatlar",
-      "policies": "Siyasətlər"
-    },
-    "buttons": {
-      "downloadPdf": "PDF Sertifikatı Yüklə",
-      "downloadDocument": "Sənədi Yüklə"
-    },
-    "policies": {
-      "qualityPolicy": "Keyfiyyət Siyasəti",
-      "environmentalPolicy": "Ətraf Mühit Siyasəti",
-      "healthSafetyPolicy": "Əməyin Mühafizəsi və Təhlükəsizlik Siyasəti"
-    },
-    "modal": {
-      "altText": "Böyüdülmüş görünüş",
-      "close": "Bağla"
-    }
+      },  "quality": {
+  "pageTitle": "Keyfiyyət və Uyğunluq Sertifikatları",
+  "pageSubtitle": "Beynəlxalq səviyyədə tanınan sertifikatlar və siyasətlər ilə mükəmməlliyə və qanuni tələblərə olan bağlılığımızı nümayiş etdiririk",
+  "tabs": {
+    "certificates": "Sertifikatlar",
+    "accreditations": "Akkreditasiya Attestatı",
+    "policies": "Siyasətlər"
+  },
+  "buttons": {
+    "downloadPdf": "PDF Sertifikatı Yüklə",
+    "downloadCertificate": "Attestatı Yüklə",
+    "downloadDocument": "Sənədi Yüklə"
+  },
+  "policies": {
+    "qualityPolicy": "Keyfiyyət Siyasəti",
+    "environmentalPolicy": "Ətraf Mühit Siyasəti",
+    "healthSafetyPolicy": "Əməyin Mühafizəsi və Təhlükəsizlik Siyasəti"
+  },
+  "accreditation": {
+    "title": "Akkreditasiya Attestatı",
+    "subtitle": "Rəsmi qurumlar tərəfindən verilmiş akkreditasiya attestatı",
+    "certificate": "Akkreditasiya Attestatı",
+    "description": "Sınaq laboratoriyasına verilmiş akreditasiya attestatı"
+  },
+  "modal": {
+    "altText": "Böyüdülmüş görünüş",
+    "close": "Bağla"
+  }
   },
       footer: {
   tagline: 'Qazma və tamamlama məhlullarının dizaynı, mühəndislik xidmətləri və məhsulları',
@@ -159,6 +180,7 @@ const resources = {
         no_results: "Heç bir nəticə tapılmadı"
       
 },
+
       productsSection: {
         category: 'MƏHSULLAR',
         title: 'Məhsullarımız',
@@ -169,7 +191,10 @@ const resources = {
           title: 'Qazma Məhlulları Əlavələri'
         },
         readMore: 'Daha Çox Oxu'
-      },
+      },      
+  
+
+      
    "header": {
     "home": "Ana Səhifə",
     "activities": "Fəaliyyətlər", 
@@ -588,16 +613,31 @@ const resources = {
     }
   },
   en: {  hse: {
-        title: "Health, Safety and Environment (HSE)",
-        environmental_monitoring: "Environmental Monitoring",
-        environmental_desc: "CDF's main activity in the field of environmental monitoring...",
-        environmental_desc_full: "CDF's main activity in environmental monitoring is to measure and monitor harmful discharges into the environment in liquid and solid forms, determine their chemical composition, contamination levels, radioactivity, hydrobiological and physical characteristics, and apply a continuous control and research system.",
-        environmental_policy: "Environmental Policy",
-        employees_security: "Employee Safety",
-        employees_security_desc: "Employee health and safety is our top priority.",
-        employees_security_desc_full: "Employee health and safety is our top priority. We apply the highest standards to ensure a safe working environment, prevent occupational diseases, and minimize risks for all employees. With regular training, modern safety equipment, and strict protocols, we ensure the safety of every employee.",
-        read_more: "Read More",
-        no_results: "No results found"
+     
+    "title": "Health, Safety and Environment (HSE)",
+
+  "environmental_monitoring": "Environmental Monitoring",
+  "environmental_desc": "Main areas of activity of CDF in the field of environmental monitoring.",
+  "environmental_desc_full": "The main activity of CDF in the field of environmental monitoring consists of carrying out quantitative and qualitative monitoring of harmful substances released into the environment in liquid and solid forms by industrial enterprises and partner companies as a result of natural and anthropogenic impacts. Within this process, the chemical composition, level of pollution, radioactive, hydro-biological properties and physical characteristics of the waste are determined, and regular control and scientific research systems are applied.",
+
+  "environmental_policy": "Environmental Policy",
+
+  "employees_security": "Employee Safety",
+  "employees_security_desc": "The health and safety of employees is our top priority.",
+  "employees_security_desc_full": "The health and safety of employees is our top priority. We apply the highest standards to ensure a safe and healthy working environment, prevent occupational diseases, and minimize risks for all employees. Through regular training, modern safety equipment, and strict internal procedures, the safety of every employee is ensured.",
+
+  "certificate_available": "Policy Available",
+  "certificate_description": "You can familiarize yourself with the occupational health and safety policy for this service.",
+  "view_certificate": "View Policy",
+
+  "policy_available": "Policy Available",
+  "employees_policy_description": "You can familiarize yourself with the occupational health and safety policy for this service.",
+  "view_policy": "View Policy",
+
+  "read_more": "Read More",
+  "no_results": "No results found",
+  "scroll_to_top": "Scroll to top"
+
       },
     translation: {
       about_us: {
@@ -605,26 +645,34 @@ const resources = {
         about_company: "Caspian Drilling Fluids (CDF) is an oil and gas engineering company focused on sales, designing drilling and completion fluids, engineering services and products.",
         description_1: "Drilling and completion fluids play a very important role in ensuring maximum hydrocarbon production, and we, as the CDF, supply the products and services necessary from the exploration phase to production to ensure optimum oil and gas production.",
         description_2: "Our company is a leading importer of organic chemicals into the Turkish domestic markets. We have storage facilities in the Istanbul and Adana regions. Supplying a broad range of products, we supply about 7% of the Turkish monomer and polymer market. At the same time, we also import chemical waste to our facilities in the Adana region."
-      },   "quality": {
-    "pageTitle": "Quality and Conformity Certificates",
-    "pageSubtitle": "Demonstrating our commitment to excellence and regulatory requirements through internationally recognized certificates and policies",
-    "tabs": {
-      "certificates": "Certificates",
-      "policies": "Policies"
-    },
-    "buttons": {
-      "downloadPdf": "Download PDF Certificate",
-      "downloadDocument": "Download Document"
-    },
-    "policies": {
-      "qualityPolicy": "Quality Policy",
-      "environmentalPolicy": "Environmental Policy",
-      "healthSafetyPolicy": "Occupational Health & Safety Policy"
-    },
-    "modal": {
-      "altText": "Enlarged view",
-      "close": "Close"
-    }
+      },  "quality": {
+  "pageTitle": "Quality and Conformity Certificates",
+  "pageSubtitle": "Demonstrating our commitment to excellence and regulatory requirements with internationally recognized certificates and policies",
+  "tabs": {
+    "certificates": "Certificates",
+    "accreditations": "Accreditation Certificate",
+    "policies": "Policies"
+  },
+  "buttons": {
+    "downloadPdf": "Download PDF Certificate",
+    "downloadCertificate": "Download Certificate",
+    "downloadDocument": "Download Document"
+  },
+  "policies": {
+    "qualityPolicy": "Quality Policy",
+    "environmentalPolicy": "Environmental Policy",
+    "healthSafetyPolicy": "Health and Safety Policy"
+  },
+  "accreditation": {
+    "title": "Accreditation Certificate",
+    "subtitle": "Accreditation certificate issued by official authorities",
+    "certificate": "Accreditation Certificate",
+    "description": "Accreditation Certificate issued to the Testing Laboratory"
+  },
+  "modal": {
+    "altText": "Enlarged view",
+    "close": "Close"
+  }
   
 },
         footer: {
@@ -1156,16 +1204,29 @@ const resources = {
     }
   },
   ru: {   hse: {
-        title: "Охрана труда, здоровья и окружающей среды (HSE)",
-        environmental_monitoring: "Мониторинг окружающей среды",
-        environmental_desc: "Основная деятельность CDF в области мониторинга окружающей среды...",
-        environmental_desc_full: "Основная деятельность CDF заключается в измерении и контроле вредных выбросов в окружающую среду в жидкой и твердой форме, определении их химического состава, степени загрязнения, радиоактивности, гидробиологических и физических характеристик и применении системы постоянного контроля и исследований.",
-        environmental_policy: "Экологическая политика",
-        employees_security: "Безопасность сотрудников",
-        employees_security_desc: "Здоровье и безопасность сотрудников – наш главный приоритет.",
-        employees_security_desc_full: "Здоровье и безопасность сотрудников – наш главный приоритет. Мы применяем самые высокие стандарты для обеспечения безопасных условий труда, предотвращения профессиональных заболеваний и минимизации рисков для всех сотрудников. С помощью регулярных тренингов, современного оборудования и строгих протоколов мы гарантируем безопасность каждого сотрудника.",
-        read_more: "Подробнее",
-        no_results: "Ничего не найдено"
+      "title": "Охрана труда, техника безопасности и окружающая среда (HSE)",
+
+  "environmental_monitoring": "Экологический мониторинг",
+  "environmental_desc": "Основные направления деятельности CDF в области экологического мониторинга.",
+  "environmental_desc_full": "Основная деятельность CDF в области экологического мониторинга заключается в проведении количественного и качественного контроля вредных веществ, выбрасываемых в окружающую среду в жидкой и твердой форме промышленными предприятиями и партнерскими компаниями в результате природных и антропогенных воздействий. В рамках данного процесса определяется химический состав отходов, степень загрязнения, радиоактивные, гидробиологические свойства и физические характеристики, а также применяются системы регулярного контроля и научно-исследовательской деятельности.",
+
+  "environmental_policy": "Экологическая политика",
+
+  "employees_security": "Безопасность сотрудников",
+  "employees_security_desc": "Здоровье и безопасность сотрудников являются нашим главным приоритетом.",
+  "employees_security_desc_full": "Здоровье и безопасность сотрудников являются нашим главным приоритетом. Мы применяем самые высокие стандарты для обеспечения безопасной и здоровой рабочей среды, предотвращения профессиональных заболеваний и минимизации рисков для всех сотрудников. Посредством регулярных обучений, современного оборудования по безопасности и строгих внутренних процедур обеспечивается безопасность каждого сотрудника.",
+
+  "certificate_available": "Политика доступна",
+  "certificate_description": "Вы можете ознакомиться с политикой в области охраны труда и техники безопасности по данной услуге.",
+  "view_certificate": "Посмотреть политику",
+
+  "policy_available": "Политика доступна",
+  "employees_policy_description": "Вы можете ознакомиться с политикой в области охраны труда и техники безопасности по данной услуге.",
+  "view_policy": "Посмотреть политику",
+
+  "read_more": "Подробнее",
+  "no_results": "Результаты не найдены",
+  "scroll_to_top": "Наверх"
       },
     translation: {
       about_us: {
@@ -1209,25 +1270,33 @@ const resources = {
         getInTouch: 'Свяжитесь с нами',
         copyright: 'CDF © Все права защищены 2025'
       },  "quality": {
-    "pageTitle": "Сертификаты Качества и Соответствия",
-    "pageSubtitle": "Демонстрируем нашу приверженность совершенству и нормативным требованиям через международно признанные сертификаты и политики",
-    "tabs": {
-      "certificates": "Сертификаты",
-      "policies": "Политики"
-    },
-    "buttons": {
-      "downloadPdf": "Скачать PDF Сертификат",
-      "downloadDocument": "Скачать Документ"
-    },
-    "policies": {
-      "qualityPolicy": "Политика Качества",
-      "environmentalPolicy": "Политика в Области Охраны Окружающей Среды",
-      "healthSafetyPolicy": "Политика в Области Охраны Труда и Техники Безопасности"
-    },
-    "modal": {
-      "altText": "Увеличенный вид",
-      "close": "Закрыть"
-    }
+  "pageTitle": "Сертификаты качества и соответствия",
+  "pageSubtitle": "Демонстрируем нашу приверженность совершенству и нормативным требованиям с помощью признанных на международном уровне сертификатов и политик",
+  "tabs": {
+    "certificates": "Сертификаты",
+    "accreditations": "Аттестат аккредитации",
+    "policies": "Политики"
+  },
+  "buttons": {
+    "downloadPdf": "Скачать PDF Сертификат",
+    "downloadCertificate": "Скачать Аттестат",
+    "downloadDocument": "Скачать Документ"
+  },
+  "policies": {
+    "qualityPolicy": "Политика качества",
+    "environmentalPolicy": "Экологическая политика",
+    "healthSafetyPolicy": "Политика охраны труда и техники безопасности"
+  },
+  "accreditation": {
+    "title": "Аттестат аккредитации",
+    "subtitle": "Аттестат аккредитации, выданный официальными органами",
+    "certificate": "Аттестат аккредитации",
+    "description": "Аттестат аккредитации, выданный испытательной лаборатории"
+  },
+  "modal": {
+    "altText": "Увеличенное изображение",
+    "close": "Закрыть"
+  }
 }
 ,
       home_page: {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiDownload, FiAward, FiFileText, FiX } from 'react-icons/fi';
+import { FiDownload, FiAward, FiFileText, FiX, FiCheckCircle } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 import iso1 from '../assets/img/iso1.png';
@@ -19,6 +19,10 @@ import iso4Pdf from '../assets/img/certificates/iso4.pdf';
 import quality1Pdf from '../assets/quanity/quanity1.pdf';
 import quality2Pdf from '../assets/quanity/quanity2.pdf';
 import quality3Pdf from '../assets/quanity/quanity3.pdf';
+
+// Single accreditation certificate
+import accreditation1 from '../assets/img/accreditation1.jpg';
+import accreditationPdf1 from '../assets/quanity/accreditation1.pdf';
 
 const QualityandConformity = () => {
   const { t } = useTranslation();
@@ -73,6 +77,15 @@ const QualityandConformity = () => {
     }
   ];
 
+  // Single accreditation certificate
+  const accreditation = {
+    id: 1,
+    image: accreditation1,
+    pdf: accreditationPdf1,
+    title: t('quality.accreditation.certificate'),
+    description: t('quality.accreditation.description')
+  };
+
   const handlePdfDownload = (pdfFile, fileName) => {
     const link = document.createElement('a');
     link.href = pdfFile;
@@ -122,7 +135,7 @@ const QualityandConformity = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-2">
             <button
               onClick={() => setActiveTab('certificates')}
-              className={`px-12 py-5 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 ${
+              className={`px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 ${
                 activeTab === 'certificates'
                   ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg'
                   : 'text-gray-300 hover:text-white hover:bg-white/5'
@@ -134,10 +147,23 @@ const QualityandConformity = () => {
               </div>
             </button>
             <button
+              onClick={() => setActiveTab('accreditations')}
+              className={`px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 ${
+                activeTab === 'accreditations'
+                  ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-lg'
+                  : 'text-gray-300 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <div className="flex items-center space-x-3">
+                <FiCheckCircle className="text-2xl" />
+                <span className="text-xl">{t('quality.tabs.accreditations')}</span>
+              </div>
+            </button>
+            <button
               onClick={() => setActiveTab('policies')}
-              className={`px-12 py-5 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 ${
+              className={`px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 ${
                 activeTab === 'policies'
-                  ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg'
+                  ? 'bg-gradient-to-r from-green-600 to-emerald-500 text-white shadow-lg'
                   : 'text-gray-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -149,9 +175,9 @@ const QualityandConformity = () => {
           </div>
         </motion.div>
 
-
         <div className="max-w-7xl mx-auto">
           <AnimatePresence mode="wait">
+            {/* Certificates Tab */}
             {activeTab === 'certificates' && (
               <motion.div
                 key="certificates"
@@ -197,6 +223,65 @@ const QualityandConformity = () => {
               </motion.div>
             )}
 
+            {/* Accreditations Tab - Single Certificate */}
+            {activeTab === 'accreditations' && (
+              <motion.div
+                key="accreditations"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4 }}
+              >
+                <div className="mb-12 text-center">
+                  <h2 className="text-3xl font-bold text-white mb-4">
+                    {t('quality.accreditation.title')}
+                  </h2>
+                  <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                    {t('quality.accreditation.subtitle')}
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="group w-full max-w-4xl"
+                  >
+                    <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 backdrop-blur-md rounded-2xl shadow-2xl border border-purple-500/30 overflow-hidden hover:scale-[1.01] transition-all duration-300">
+                      <div
+                        className="p-8 cursor-pointer bg-gradient-to-br from-white/5 to-white/10 border-b border-white/10"
+                        onClick={() => setSelectedImage(accreditation.image)}
+                      >
+                        <img
+                          src={accreditation.image}
+                          alt={accreditation.title}
+                          className="w-full h-96 object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-10">
+                        <h3 className="text-3xl font-bold text-white mb-4 text-center">
+                          {accreditation.title}
+                        </h3>
+                        <p className="text-gray-300 text-center text-lg mb-8 max-w-2xl mx-auto">
+                          {accreditation.description}
+                        </p>
+                        <div className="flex justify-center">
+                          <button
+                            onClick={() => handlePdfDownload(accreditation.pdf, `${accreditation.title}.pdf`)}
+                            className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-4 px-10 rounded-xl font-bold flex items-center justify-center space-x-3 transition-all duration-300 transform hover:scale-105"
+                          >
+                            <FiDownload className="text-xl" />
+                            <span className="text-lg">{t('quality.buttons.downloadCertificate')}</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+            )}
+
+            {/* Policies Tab */}
             {activeTab === 'policies' && (
               <motion.div
                 key="policies"

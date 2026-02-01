@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { FiMail, FiLinkedin, FiInstagram } from 'react-icons/fi';
+import {
+  FiMail,
+  FiLinkedin,
+  FiInstagram,
+  FiSend,
+  FiUser,
+  FiMessageSquare,
+  FiCopy,
+  FiCheck
+} from 'react-icons/fi';
+import { motion } from 'framer-motion';
 
 const linkedinUrl = "https://www.linkedin.com/company/caspian-drilling-fluids/";
-const instagramUrl = "https://www.instagram.com/caspian.drilling.fluids?igsh=MXI1cjllYmVjcWRo";
+const instagramUrl = "https://www.instagram.com/caspian.drilling.fluids";
+const emailAddress = "office@caspiandf.com";
 
 const ContactSidebar = () => {
   const [formData, setFormData] = useState({
@@ -11,97 +21,150 @@ const ContactSidebar = () => {
     email: '',
     message: ''
   });
-  const [status, setStatus] = useState(null);
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus('loading');
 
-    try {
-      await axios.post('http://localhost:8000/api/contact', formData);
-      setStatus('success');
+    const subject = `Caspian DF Contact Form: ${formData.name}`;
+    const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+
+Message:
+${formData.message}
+
+---
+This message was sent via the Caspian Drilling Fluids website contact form.
+    `.trim();
+
+    const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.open(mailtoLink, '_blank');
+    setIsSubmitted(true);
+
+    setTimeout(() => {
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      console.error('Message sending error:', error.response?.data || error.message);
-      setStatus('error');
-    }
+      setIsSubmitted(false);
+    }, 3000);
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(emailAddress);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
   };
 
   return (
-    <div className="bg-gray-50 p-8 rounded-lg shadow-sm lg:sticky lg:top-28">
-      <h3 className="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h3>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl shadow-xl border border-blue-100 lg:sticky lg:top-28"
+    >
+      {/* Header */}
+      <div className="text-center mb-8">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mb-4">
+          <FiSend className="text-2xl text-white" />
+        </div>
+        <h3 className="text-2xl font-bold text-gray-800">
+          Contact Us
+        </h3>
+        <p className="text-gray-600 mt-2">
+          Get in touch with our team
+        </p>
+      </div>
+
+      {/* Form */}
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label htmlFor="name" className="sr-only">Name</label>
+        <div className="relative">
+          <FiUser className="absolute left-3 top-3.5 text-gray-400" />
           <input
             type="text"
             name="name"
-            id="name"
-            placeholder="Name"
             value={formData.name}
             onChange={handleChange}
+            placeholder="Your Name"
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            className="w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div>
-          <label htmlFor="email" className="sr-only">Email</label>
+
+        <div className="relative">
+          <FiMail className="absolute left-3 top-3.5 text-gray-400" />
           <input
             type="email"
             name="email"
-            id="email"
-            placeholder="Email"
             value={formData.email}
             onChange={handleChange}
+            placeholder="Email Address"
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            className="w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div>
-          <label htmlFor="message" className="sr-only">Message</label>
+
+        <div className="relative">
+          <FiMessageSquare className="absolute left-3 top-3.5 text-gray-400" />
           <textarea
             name="message"
-            id="message"
-            rows="5"
-            placeholder="Message"
             value={formData.message}
             onChange={handleChange}
+            rows="4"
+            placeholder="Your Message"
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-          ></textarea>
+            className="w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 resize-none"
+          />
         </div>
-        <div>
-          <button
-            type="submit"
-            disabled={status === 'loading'}
-            className="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-md hover:bg-blue-700 transition-colors duration-300"
-          >
-            {status === 'loading' ? 'Submitting...' : 'Get in Touch'}
-          </button>
-        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-4 rounded-xl flex justify-center items-center gap-2"
+        >
+          <FiSend />
+          {isSubmitted ? "Opening email client..." : "Send Message"}
+        </button>
       </form>
 
-      {status && status !== 'loading' && (
-        <p className={`mt-4 text-center ${status === 'success' ? 'text-green-600' : 'text-red-600'}`}>
-          {status === 'success' ? 'Your message was sent successfully!' : 'An error occurred while sending the message. Please try again.'}
-        </p>
+      {isSubmitted && (
+        <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-xl text-center text-green-700">
+          ✓ Email client opened successfully!
+        </div>
       )}
 
-      <div className="mt-10 pt-8 border-t border-gray-200">
-        <h4 className="text-xl font-bold text-gray-800 mb-4">Contact Info</h4>
-        <a href="mailto:office@caspiandf.com" className="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
-          <FiMail className="mr-3" /> office@caspiandf.com
-        </a>
-        <div className="flex items-center space-x-4 mt-4">
-          <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-700 transition-colors"><FiLinkedin size={24}/></a>
-          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-pink-600 transition-colors"><FiInstagram size={24}/></a>
+      {/* Contact Info */}
+      <div className="mt-10 pt-8 border-t">
+        <h4 className="text-xl font-bold text-center mb-4">
+          Contact Information
+        </h4>
+
+        <div className="flex justify-between items-center bg-blue-50 p-4 rounded-xl">
+          <span>{emailAddress}</span>
+          <button onClick={copyToClipboard} className="flex items-center gap-1 text-blue-600">
+            {isCopied ? <FiCheck /> : <FiCopy />}
+            {isCopied ? "Copied!" : "Copy"}
+          </button>
         </div>
+
+        <div className="flex justify-center gap-6 mt-6">
+          <a href={linkedinUrl} target="_blank" rel="noreferrer">
+            <FiLinkedin size={24} />
+          </a>
+          <a href={instagramUrl} target="_blank" rel="noreferrer">
+            <FiInstagram size={24} />
+          </a>
+        </div>
+
+        <p className="text-sm text-gray-600 text-center mt-6">
+          Clicking “Send Message” will open your default email application with a pre-filled message.
+        </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
